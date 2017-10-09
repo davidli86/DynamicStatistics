@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DynamicStatistics_Example' do
+  pod 'DynamicStatistics', :path => '../'
+
+  target 'DynamicStatistics_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
