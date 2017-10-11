@@ -22,6 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7777429F1F8F42440061D2A8 /* DSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7777429E1F8F42430061D2A8 /* DSWebViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F308DCF8118708533D1FB167 /* Pods_DynamicStatistics_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F171B7C347A521A6B511C5EC /* Pods_DynamicStatistics_Example.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		15D00E04EEF5E6A6A9C88D54 /* Pods-DynamicStatistics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Example/Pods-DynamicStatistics_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		2C7C663A13560EA93A3FAC1C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2C7C663A13560EA93A3FAC1C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5AA46FD4128E53D1FE913B3E /* Pods-DynamicStatistics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Tests/Pods-DynamicStatistics_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* DynamicStatistics_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicStatistics_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,11 +62,13 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6195CBFD0EE2D9D9FED17D8D /* Pods-DynamicStatistics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Example/Pods-DynamicStatistics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7777429D1F8F42430061D2A8 /* DSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSWebViewController.h; sourceTree = "<group>"; };
+		7777429E1F8F42430061D2A8 /* DSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSWebViewController.m; sourceTree = "<group>"; };
 		799435BD0DBC3178A22BD65F /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA67389FF2E1A583EDA3F0C /* Pods-DynamicStatistics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Tests/Pods-DynamicStatistics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D38F7A2ED5B83D441AB8305B /* DynamicStatistics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DynamicStatistics.podspec; path = ../DynamicStatistics.podspec; sourceTree = "<group>"; };
-		E0234735D9116C284E80A883 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D38F7A2ED5B83D441AB8305B /* DynamicStatistics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DynamicStatistics.podspec; path = ../DynamicStatistics.podspec; sourceTree = "<group>"; };
+		E0234735D9116C284E80A883 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F171B7C347A521A6B511C5EC /* Pods_DynamicStatistics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* DSViewController.h */,
 				6003F5A6195388D20070C39A /* DSViewController.m */,
+				7777429D1F8F42430061D2A8 /* DSWebViewController.h */,
+				7777429E1F8F42430061D2A8 /* DSWebViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -250,6 +255,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "492334421@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = S5VJ77ZCZR;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -394,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7777429F1F8F42440061D2A8 /* DSWebViewController.m in Sources */,
 				6003F59E195388D20070C39A /* DSAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* DSViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -524,11 +533,12 @@
 			baseConfigurationReference = 15D00E04EEF5E6A6A9C88D54 /* Pods-DynamicStatistics_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5VJ77ZCZR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicStatistics/DynamicStatistics-Prefix.pch";
 				INFOPLIST_FILE = "DynamicStatistics/DynamicStatistics-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ant20.fortest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -539,11 +549,12 @@
 			baseConfigurationReference = 6195CBFD0EE2D9D9FED17D8D /* Pods-DynamicStatistics_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5VJ77ZCZR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicStatistics/DynamicStatistics-Prefix.pch";
 				INFOPLIST_FILE = "DynamicStatistics/DynamicStatistics-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ant20.fortest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,0 +1,22 @@
+{
+  "name": "DynamicStatistics",
+  "version": "0.1.0",
+  "summary": "A short description of DynamicStatistics.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/492334421@qq.com/DynamicStatistics",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "492334421@qq.com": "David.Li@activenetwork.com"
+  },
+  "source": {
+    "git": "https://github.com/492334421@qq.com/DynamicStatistics.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DynamicStatistics/Classes/**/*"
+}

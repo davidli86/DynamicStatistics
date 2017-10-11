@@ -1,0 +1,16 @@
+PODS:
+  - DynamicStatistics (0.1.0)
+
+DEPENDENCIES:
+  - DynamicStatistics (from `../`)
+
+EXTERNAL SOURCES:
+  DynamicStatistics:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DynamicStatistics: 414a3c758783dfe9d3cf2070354af164c8eb97c4
+
+PODFILE CHECKSUM: b2b502522baf117e568beeaa7d13556f3b8326b8
+
+COCOAPODS: 1.1.1
