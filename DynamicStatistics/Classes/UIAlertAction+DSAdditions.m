@@ -8,6 +8,7 @@
 
 #import "UIAlertAction+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DSEvent.h"
 
 @implementation UIAlertAction (DSAdditions)
 
@@ -22,8 +23,10 @@
 + (instancetype)swizzling_actionWithTitle:(nullable NSString *)title style:(UIAlertActionStyle)style handler:(void (^ __nullable)(UIAlertAction *action))handler;
 {
     return [self swizzling_actionWithTitle:title style:style handler:^(UIAlertAction *action) {
-        NSLog(@"clicked alertAction with title: %@", title);
         handler(action);
+        
+        DSEvent *event = [DSEvent eventWithNonView:action andIndex:0];
+        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
     }];
 }
 

@@ -8,6 +8,7 @@
 
 #import "UIViewController+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DSEvent.h"
 
 @implementation UIViewController (DSAdditions)
 
@@ -24,25 +25,33 @@
 
 -(void)swizzling_viewDidLoad
 {
-    NSLog(@"swizzling_viewDidLoad: %@", [self class]);
     [self swizzling_viewDidLoad];
+    
+    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageCreate];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 -(void)swizzling_viewDidAppear:(BOOL)animated
 {
-    NSLog(@"swizzling_viewDidAppear: %@", [self class]);
     [self swizzling_viewDidAppear:animated];
+    
+    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageAppear];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 -(void)swizzling_viewDidDisappear:(BOOL)animated
 {
-    NSLog(@"swizzling_viewDidDisappear: %@", [self class]);
     [self swizzling_viewDidDisappear:animated];
+    
+    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageDisappear];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 -(void)swizzling_dealloc
 {
-    NSLog(@"swizzling_dealloc: %@", [self class]);
+    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageDestroy];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    
     [self swizzling_dealloc];
 }
 

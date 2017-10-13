@@ -8,13 +8,16 @@
 
 #import "UIActionSheet+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DSEvent.h"
 #import <objc/message.h>
 
 void swizzling_actionSheet_clickedButtonAtIndex(id self, SEL _cmd, UIActionSheet *actionSheet, NSInteger buttonIndex)
 {
-    NSLog(@"swizzling_actionSheet_clickedButtonAtIndex: %lu", (unsigned long)buttonIndex);
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, NSInteger))objc_msgSend)(self, swizzledSEL, actionSheet, buttonIndex);
+    
+    DSEvent *event = [DSEvent eventWithView:actionSheet andIndex:buttonIndex];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 @implementation UIActionSheet (DSAdditions)

@@ -23,6 +23,10 @@
 		6AAB3480BEE1BBE47C3093978368B839 /* Pods-DynamicStatistics_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E37D8A0CB90A5E69974FEAC79C9E2379 /* Pods-DynamicStatistics_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		748174247D20661519C7FF1B502009F3 /* UIAlertAction+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F43C0A89E82403394A4B11E91749FFE /* UIAlertAction+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77771345F36D1897174E8688F60A61E6 /* Pods-DynamicStatistics_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C521F5DFE4E329EA2AF71F72521B66C7 /* Pods-DynamicStatistics_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777742A21F8F694D0061D2A8 /* UIView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777742A01F8F694C0061D2A8 /* UIView+DSAdditions.h */; };
+		777742A31F8F694D0061D2A8 /* UIView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777742A11F8F694C0061D2A8 /* UIView+DSAdditions.m */; };
+		777742AA1F8F70820061D2A8 /* DSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 777742A81F8F70820061D2A8 /* DSEvent.h */; };
+		777742AB1F8F70820061D2A8 /* DSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 777742A91F8F70820061D2A8 /* DSEvent.m */; };
 		81E0FFA15E8B4BAA2AD0216FCEE67F26 /* UINavigationController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D9F0150DF6E46AE511591EB9BAC576 /* UINavigationController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8314BF59574B8CBB60706E8651092DC6 /* UIScrollView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72DE99D8BEC29E58F3CF79305D26AD /* UIScrollView+DSAdditions.m */; };
 		8E99A5977D38BC8F133290860C64DD23 /* NSObject+DSRuntimeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 268DE94FACBEE0B14AC03DA41DCB0137 /* NSObject+DSRuntimeAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +80,10 @@
 		6EB33622435BFB0E0FA6113E6014995E /* DynamicStatistics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics-umbrella.h"; sourceTree = "<group>"; };
 		716AAC477F910EAD58A8A4E600F098B4 /* Pods-DynamicStatistics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DynamicStatistics_Tests.modulemap"; sourceTree = "<group>"; };
 		72EB39A768EE6FD8A923741984B8552B /* UIGestureRecognizer+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+DSAdditions.m"; sourceTree = "<group>"; };
+		777742A01F8F694C0061D2A8 /* UIView+DSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DSAdditions.h"; sourceTree = "<group>"; };
+		777742A11F8F694C0061D2A8 /* UIView+DSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DSAdditions.m"; sourceTree = "<group>"; };
+		777742A81F8F70820061D2A8 /* DSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSEvent.h; sourceTree = "<group>"; };
+		777742A91F8F70820061D2A8 /* DSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSEvent.m; sourceTree = "<group>"; };
 		7B020D9B28157EE60D58CAE8EA08D750 /* Pods-DynamicStatistics_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Tests-resources.sh"; sourceTree = "<group>"; };
 		7C33B3EFB352DE02ADAACC69A846AC12 /* UINavigationController+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DSAdditions.m"; sourceTree = "<group>"; };
 		7E3FC745DF8CEE29D3B93D00C7798E1E /* UITableView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DSAdditions.m"; sourceTree = "<group>"; };
@@ -228,6 +236,8 @@
 		79F1953A81B44F8AEF37FEEAED058113 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				777742A81F8F70820061D2A8 /* DSEvent.h */,
+				777742A91F8F70820061D2A8 /* DSEvent.m */,
 				268DE94FACBEE0B14AC03DA41DCB0137 /* NSObject+DSRuntimeAdditions.h */,
 				EA40A3C61A5AE894DEB80C466EE2A035 /* NSObject+DSRuntimeAdditions.m */,
 				A243F56E329E300216604341CBA16310 /* UIActionSheet+DSAdditions.h */,
@@ -252,6 +262,8 @@
 				D9549AEC1896F193FC21072F9B7C3408 /* UIViewController+DSAdditions.m */,
 				47F8D5945638DD3FC65502870013EB3F /* UIWebView+DSAdditions.h */,
 				8181C53376240E8EE19457386BCE16EB /* UIWebView+DSAdditions.m */,
+				777742A01F8F694C0061D2A8 /* UIView+DSAdditions.h */,
+				777742A11F8F694C0061D2A8 /* UIView+DSAdditions.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -306,12 +318,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777742A21F8F694D0061D2A8 /* UIView+DSAdditions.h in Headers */,
 				4007A7E53B63440008C738055402CED3 /* DynamicStatistics-umbrella.h in Headers */,
 				8E99A5977D38BC8F133290860C64DD23 /* NSObject+DSRuntimeAdditions.h in Headers */,
 				F84950B4D0C60BE5653DE1C9E1DDD036 /* UIActionSheet+DSAdditions.h in Headers */,
 				748174247D20661519C7FF1B502009F3 /* UIAlertAction+DSAdditions.h in Headers */,
 				14C0816631A41594410DFC287F4AE176 /* UIAlertView+DSAdditions.h in Headers */,
 				02FAC67883D136A68ABCD2ED13B67C7A /* UIApplication+DSAdditions.h in Headers */,
+				777742AA1F8F70820061D2A8 /* DSEvent.h in Headers */,
 				FB997DAA60540F76C3D46399CD5BCE4D /* UICollectionView+DSAdditions.h in Headers */,
 				D6FB1A7FE764973B266196C28A2CD0CE /* UIGestureRecognizer+DSAdditions.h in Headers */,
 				81E0FFA15E8B4BAA2AD0216FCEE67F26 /* UINavigationController+DSAdditions.h in Headers */,
@@ -437,6 +451,8 @@
 				53EA7259F77CC86F66DB2AF7C4BCCC81 /* UINavigationController+DSAdditions.m in Sources */,
 				8314BF59574B8CBB60706E8651092DC6 /* UIScrollView+DSAdditions.m in Sources */,
 				2ACC764C0923FC3D078B209EDCA2D886 /* UITableView+DSAdditions.m in Sources */,
+				777742A31F8F694D0061D2A8 /* UIView+DSAdditions.m in Sources */,
+				777742AB1F8F70820061D2A8 /* DSEvent.m in Sources */,
 				5D456D29E853EE7CC6D5D0C8DA8991E0 /* UIViewController+DSAdditions.m in Sources */,
 				54CD666A521240665BD330BA8050AFAF /* UIWebView+DSAdditions.m in Sources */,
 			);

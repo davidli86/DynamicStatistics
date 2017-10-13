@@ -20,6 +20,14 @@
     [super viewDidLoad];
     _webView.delegate = self;
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Show tabs" style:UIBarButtonItemStylePlain target:self action:@selector(showTab)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+-(void)showTab
+{
+    [self performSegueWithIdentifier:@"showTab" sender:nil];
 }
 
 

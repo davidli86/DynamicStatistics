@@ -33,6 +33,13 @@
     _collectionView.dataSource = self;
     _collectionView.layer.borderColor = [UIColor grayColor].CGColor;
     _collectionView.layer.borderWidth = 1;
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 30)];
+    [button addTarget:self action:@selector(naviButton:) forControlEvents:UIControlEventTouchDown];
+    [button setTitle:@"Navi Btn" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItems = @[self.navigationItem.rightBarButtonItem, barItem];
 }
 
 -(void)targetAction
@@ -61,6 +68,12 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (IBAction)naviButton:(id)sender {
+}
+
+- (IBAction)naviItem:(id)sender {
+
+}
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 

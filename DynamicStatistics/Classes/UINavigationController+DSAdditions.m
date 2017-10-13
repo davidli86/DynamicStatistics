@@ -8,6 +8,7 @@
 
 #import "UINavigationController+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DSEvent.h"
 
 @implementation UINavigationController (DSAdditions)
 
@@ -22,8 +23,10 @@
 - (BOOL)swizzling_navigationBar:(UINavigationBar *)navigationBar
         shouldPopItem:(UINavigationItem *)item
 {
+    DSEvent *event = [DSEvent eventWithNonView:item andIndex:0 eventType:DSEventType_PagePopOut];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+
     BOOL result = [self swizzling_navigationBar:navigationBar shouldPopItem:item];
-    NSLog(@"swizzling_navigationBar_shouldPopItem: %@ result: %d", item.title, result);
     return result;
 }
 

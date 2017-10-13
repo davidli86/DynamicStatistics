@@ -8,6 +8,8 @@
 
 #import "UIApplication+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "UIView+DSAdditions.h"
+#import "DSEvent.h"
 
 @implementation UIApplication (DSAdditions)
 
@@ -21,8 +23,17 @@
 
 -(BOOL)swizzling_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
 {
-    NSLog(@"swizzling_sendAction: %@ to: %@ from: %@ forEvent: %d", NSStringFromSelector(action), [target class], [sender class], event.type);
+    if ([sender isKindOfClass:[UIView class]]) {
+        DSEvent *event = [DSEvent eventWithView:sender];
+        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    }else{
+        DSEvent *event = [DSEvent eventWithNonView:sender andIndex:0];
+        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    }
+    
     return [self swizzling_sendAction:action to:target from:sender forEvent:event];
 }
+
+
 
 @end

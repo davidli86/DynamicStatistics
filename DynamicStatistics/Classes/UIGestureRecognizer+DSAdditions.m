@@ -8,12 +8,36 @@
 
 #import "UIGestureRecognizer+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DSEvent.h"
 #import <objc/message.h>
 
 void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
-    NSLog(@"swizzling_targetAction: %@, sender: %@", [self class], [sender class]);
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, sender);
+    
+    if (sender.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    //UIPanGestureRecognizer事件触发频率太高，暂不考虑。UIScrollView的滑动事件通过hook delegate来抓取
+    DSEventType eventType = DSEventType_Unknown;
+    if ([sender isKindOfClass:[UITapGestureRecognizer class]]) {
+        eventType = DSEventType_GestureTap;
+    }else if ([sender isKindOfClass:[UIPinchGestureRecognizer class]]){
+        eventType = DSEventType_GesturePinch;
+    }else if ([sender isKindOfClass:[UIRotationGestureRecognizer class]]){
+        eventType = DSEventType_GestureRotation;
+    }else if([sender isKindOfClass:[UISwipeGestureRecognizer class]]){
+        eventType = DSEventType_GestureSwipe;
+    }else if ([sender isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]){
+        eventType = DSEventType_GestureScreenEdgePan;
+    }else if ([sender isKindOfClass:[UILongPressGestureRecognizer class]]){
+        eventType = DSEventType_GestureLongPress;
+    }
+    if (eventType != DSEventType_Unknown) {
+        DSEvent *event = [DSEvent eventWithView:sender.view andEventType:eventType];
+        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    }
 }
 
 @implementation UIGestureRecognizer (DSAdditions)

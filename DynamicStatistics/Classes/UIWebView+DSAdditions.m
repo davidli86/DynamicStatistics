@@ -8,27 +8,34 @@
 
 #import "UIWebView+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DSEvent.h"
 #import <objc/message.h>
 
 void swizzling_webViewDidStartLoad(id self, SEL _cmd, UIWebView *webView)
 {
-    NSLog(@"swizzling_webViewDidStartLoad: %@", [self class]);
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
+    
+    DSEvent *event = [DSEvent eventWithView:webView andEventType:DSEventType_StartLoadUrl];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 void swizzling_webViewDidFinishLoad(id self, SEL _cmd, UIWebView *webView)
 {
-    NSLog(@"swizzling_webViewDidFinishLoad: %@", [self class]);
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
+    
+    DSEvent *event = [DSEvent eventWithView:webView andEventType:DSEventType_SucceedLoadUrl];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webView, NSError *error)
 {
-    NSLog(@"swizzling_webView_didFailLoadWithError: %@", [self class]);
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, webView, error);
+    
+    DSEvent *event = [DSEvent eventWithView:webView andEventType:DSEventType_FailLoadUrl];
+    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
 }
 
 @implementation UIWebView (DSAdditions)
