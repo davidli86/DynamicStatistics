@@ -9,7 +9,8 @@
 #import "UIApplication+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
 #import "UIView+DSAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
+#import "DynamicStatistics.h"
 
 @implementation UIApplication (DSAdditions)
 
@@ -24,11 +25,11 @@
 -(BOOL)swizzling_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
 {
     if ([sender isKindOfClass:[UIView class]]) {
-        DSEvent *event = [DSEvent eventWithView:sender];
-        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+        DSViewEvent *event = [DSViewEvent eventWithView:sender];
+        [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     }else{
-        DSEvent *event = [DSEvent eventWithNonView:sender andIndex:0];
-        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+        DSViewEvent *event = [DSViewEvent eventWithNonView:sender andIndex:0];
+        [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     }
     
     return [self swizzling_sendAction:action to:target from:sender forEvent:event];

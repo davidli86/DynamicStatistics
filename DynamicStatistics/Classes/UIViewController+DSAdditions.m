@@ -8,7 +8,8 @@
 
 #import "UIViewController+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
+#import "DynamicStatistics.h"
 
 @implementation UIViewController (DSAdditions)
 
@@ -27,30 +28,30 @@
 {
     [self swizzling_viewDidLoad];
     
-    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageCreate];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageCreate];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 -(void)swizzling_viewDidAppear:(BOOL)animated
 {
     [self swizzling_viewDidAppear:animated];
     
-    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageAppear];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageAppear];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 -(void)swizzling_viewDidDisappear:(BOOL)animated
 {
     [self swizzling_viewDidDisappear:animated];
     
-    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageDisappear];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageDisappear];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 -(void)swizzling_dealloc
 {
-    DSEvent *event = [DSEvent eventWithViewController:self andEventType:DSEventType_PageDestroy];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageDestroy];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     [self swizzling_dealloc];
 }

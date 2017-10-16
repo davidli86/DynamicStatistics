@@ -6,10 +6,10 @@
 //
 //
 
-#import "DSEvent.h"
+#import "DSViewEvent.h"
 #import "UIView+DSAdditions.h"
 
-@implementation DSEvent
+@implementation DSViewEvent
 
 -(NSString *)eventTypeDescription;
 {
@@ -74,7 +74,7 @@
 }
 
 #pragma mark - Public Constructer
-+(DSEvent *)eventWithView:(UIView *)view
++(DSViewEvent *)eventWithView:(UIView *)view
 {
     NSInteger index = 0;
     if (view.superview) {
@@ -84,7 +84,7 @@
     return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:DSEventType_Click];
 }
 
-+(DSEvent *)eventWithView:(UIView *)view andIndex:(NSInteger)index
++(DSViewEvent *)eventWithView:(UIView *)view andIndex:(NSInteger)index
 {
     NSString *indexStr = [NSString stringWithFormat:@"%ld", index];
     if ([view isKindOfClass:[UIAlertView class]] || [view isKindOfClass:[UIActionSheet class]]) {
@@ -94,22 +94,22 @@
     }
 }
 
-+(DSEvent *)eventWithView:(UIView *)view andIndexPath:(NSIndexPath *)indexPath
++(DSViewEvent *)eventWithView:(UIView *)view andIndexPath:(NSIndexPath *)indexPath
 {
     return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld:%ld", indexPath.section, indexPath.row] eventType:DSEventType_Click];
 }
 
-+(DSEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index
++(DSViewEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index
 {
     return [self eventWithNonView:nonView andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:DSEventType_Click];
 }
 
-+(DSEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index eventType:(DSEventType)eventType
++(DSViewEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index eventType:(DSEventType)eventType
 {
     return [self eventWithNonView:nonView andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:DSEventType_PagePopOut];
 }
 
-+(DSEvent *)eventWithView:(UIView *)view andEventType:(DSEventType)eventType
++(DSViewEvent *)eventWithView:(UIView *)view andEventType:(DSEventType)eventType
 {
     NSInteger index = 0;
     if (view.superview) {
@@ -118,13 +118,13 @@
     return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:eventType];
 }
 
-+(DSEvent *)eventWithViewController:(UIViewController *)viewController andEventType:(DSEventType)eventType
++(DSViewEvent *)eventWithViewController:(UIViewController *)viewController andEventType:(DSEventType)eventType
 {
     NSInteger index = 0;
     if (viewController.parentViewController) {
         index = [viewController.parentViewController.childViewControllers indexOfObject:viewController];
     }
-    DSEvent *event = [[DSEvent alloc] init];
+    DSViewEvent *event = [[DSViewEvent alloc] init];
     event.viewPath = [NSString stringWithFormat:@"%@&&%ld", [viewController class], index];
     event.eventType = eventType;
     return event;
@@ -132,7 +132,7 @@
 
 #pragma mark - Private Constructer
 
-+(DSEvent *)eventWithNonView:(id)nonView andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
++(DSViewEvent *)eventWithNonView:(id)nonView andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
 {
     NSMutableString *viewId = [NSMutableString stringWithString:NSStringFromClass([nonView class])];
     
@@ -169,7 +169,7 @@
 }
 
 
-+(DSEvent *)eventWithViewId:(NSString *)viewId andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
++(DSViewEvent *)eventWithViewId:(NSString *)viewId andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
 {
     NSMutableArray *viewClassPath = [NSMutableArray array];
     NSMutableArray *viewIndexPath = [NSMutableArray array];
@@ -199,14 +199,14 @@
     NSString *indexPathStr = [viewIndexPath.reverseObjectEnumerator.allObjects componentsJoinedByString:@"-"];
     NSString *viewPath = [NSString stringWithFormat:@"%@&&%@", classPathStr, indexPathStr];
     
-    DSEvent *event = [[DSEvent alloc] init];
+    DSViewEvent *event = [[DSViewEvent alloc] init];
     event.viewPath = viewPath;
     event.eventType = eventType;
     
     return event;
 }
 
-+(DSEvent *)eventWithView:(UIView *)view andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
++(DSViewEvent *)eventWithView:(UIView *)view andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
 {
     NSMutableArray *viewClassPath = [NSMutableArray array];
     NSMutableArray *viewIndexPath = [NSMutableArray array];
@@ -248,7 +248,7 @@
     NSString *indexPathStr = [viewIndexPath.reverseObjectEnumerator.allObjects componentsJoinedByString:@"-"];
     NSString *viewPath = [NSString stringWithFormat:@"%@&&%@", classPathStr, indexPathStr];
     
-    DSEvent *event = [[DSEvent alloc] init];
+    DSViewEvent *event = [[DSViewEvent alloc] init];
     event.viewPath = viewPath;
     event.eventType = eventType;
     

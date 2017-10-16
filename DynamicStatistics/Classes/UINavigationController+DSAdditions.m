@@ -8,7 +8,8 @@
 
 #import "UINavigationController+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
+#import "DynamicStatistics.h"
 
 @implementation UINavigationController (DSAdditions)
 
@@ -23,9 +24,9 @@
 - (BOOL)swizzling_navigationBar:(UINavigationBar *)navigationBar
         shouldPopItem:(UINavigationItem *)item
 {
-    DSEvent *event = [DSEvent eventWithNonView:item andIndex:0 eventType:DSEventType_PagePopOut];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
-
+    DSViewEvent *event = [DSViewEvent eventWithNonView:item andIndex:0 eventType:DSEventType_PagePopOut];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
     BOOL result = [self swizzling_navigationBar:navigationBar shouldPopItem:item];
     return result;
 }

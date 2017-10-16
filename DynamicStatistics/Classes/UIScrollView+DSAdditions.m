@@ -8,16 +8,17 @@
 
 #import "UIScrollView+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
 #import <objc/message.h>
+#import "DynamicStatistics.h"
 
 void swizzling_scrollViewDidScrollToTop(id self, SEL _cmd, UIScrollView *scrollView)
 {
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
     
-    DSEvent *event = [DSEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 void swizzling_scrollViewDidEndDecelerating(id self, SEL _cmd, UIScrollView *scrollView)
@@ -25,8 +26,8 @@ void swizzling_scrollViewDidEndDecelerating(id self, SEL _cmd, UIScrollView *scr
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
     
-    DSEvent *event = [DSEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 void swizzling_scrollViewDidEndDragging_willDecelerate(id self, SEL _cmd, UIScrollView *scrollView, BOOL decelerate)
@@ -34,8 +35,8 @@ void swizzling_scrollViewDidEndDragging_willDecelerate(id self, SEL _cmd, UIScro
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, BOOL))objc_msgSend)(self, swizzledSEL, scrollView, decelerate);
     
-    DSEvent *event = [DSEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 void swizzling_scrollViewWillEndDragging_withVelocity_targetContentOffset(id self, SEL _cmd, UIScrollView *scrollView, CGPoint velocity, CGPoint *targetContentOffset)
@@ -43,8 +44,8 @@ void swizzling_scrollViewWillEndDragging_withVelocity_targetContentOffset(id sel
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, CGPoint, CGPoint *))objc_msgSend)(self, swizzledSEL, scrollView, velocity, targetContentOffset);
     
-    DSEvent *event = [DSEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 @implementation UIScrollView (DSAdditions)

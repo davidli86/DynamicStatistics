@@ -7,12 +7,16 @@
 //
 
 #import "DSAppDelegate.h"
+#import <DynamicStatistics/DynamicStatistics.h>
 
 @implementation DSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[DynamicStatistics sharedInstance] setupWithPlist:@"DynamicStatistics" andEventLogBlock:^(DSViewEvent *event) {
+        NSLog(@"\n--------------------------------------------------------------\nGet View Event\nEvent Name: %@\nEvent Type: %@\nView Path:%@\n--------------------------------------------------------------", event.eventName, event.eventTypeDescription, event.viewPath);
+    }];
+    [[DynamicStatistics sharedInstance] setLogAllPageEvent:YES];
     return YES;
 }
 

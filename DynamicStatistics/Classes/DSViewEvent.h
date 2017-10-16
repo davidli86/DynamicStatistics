@@ -1,5 +1,5 @@
 //
-//  DSEvent.h
+//  DSViewEvent.h
 //  Pods
 //
 //  Created by David Li on 12/10/2017.
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, DSEventType) {
     DSEventType_Unknown,
 };
 
-@interface DSEvent : NSObject
+@interface DSViewEvent : NSObject
 
 @property(nonatomic, strong) NSString               *eventName;
 @property(nonatomic, strong) NSString               *viewPath;
@@ -40,16 +40,16 @@ typedef NS_ENUM(NSUInteger, DSEventType) {
 @property(nonatomic, assign, readonly) NSString     *eventTypeDescription;
 
 //for UIView
-+(DSEvent *)eventWithView:(UIView *)view;
-+(DSEvent *)eventWithView:(UIView *)view andIndex:(NSInteger)index;
-+(DSEvent *)eventWithView:(UIView *)view andIndexPath:(NSIndexPath *)indexPath;
-+(DSEvent *)eventWithView:(UIView *)view andEventType:(DSEventType)eventType;
++(DSViewEvent *)eventWithView:(UIView *)view;
++(DSViewEvent *)eventWithView:(UIView *)view andIndex:(NSInteger)index;
++(DSViewEvent *)eventWithView:(UIView *)view andIndexPath:(NSIndexPath *)indexPath;
++(DSViewEvent *)eventWithView:(UIView *)view andEventType:(DSEventType)eventType;
 
 //for UIAlertAction & UIBarButtonItem
-+(DSEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index;
-+(DSEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index eventType:(DSEventType)eventType;
++(DSViewEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index;
++(DSViewEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index eventType:(DSEventType)eventType;
 
 //for UIViewController
-+(DSEvent *)eventWithViewController:(UIViewController *)viewController andEventType:(DSEventType)eventType;
++(DSViewEvent *)eventWithViewController:(UIViewController *)viewController andEventType:(DSEventType)eventType;
 
 @end

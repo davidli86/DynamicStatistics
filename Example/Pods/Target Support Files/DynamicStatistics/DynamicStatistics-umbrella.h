@@ -2,7 +2,8 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "DSHeaders.h"
+#import "DSViewEvent.h"
+#import "DynamicStatistics.h"
 #import "NSObject+DSRuntimeAdditions.h"
 #import "UIActionSheet+DSAdditions.h"
 #import "UIAlertAction+DSAdditions.h"
@@ -13,6 +14,7 @@
 #import "UINavigationController+DSAdditions.h"
 #import "UIScrollView+DSAdditions.h"
 #import "UITableView+DSAdditions.h"
+#import "UIView+DSAdditions.h"
 #import "UIViewController+DSAdditions.h"
 #import "UIWebView+DSAdditions.h"
 

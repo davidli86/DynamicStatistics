@@ -8,7 +8,8 @@
 
 #import "UIAlertAction+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
+#import "DynamicStatistics.h"
 
 @implementation UIAlertAction (DSAdditions)
 
@@ -25,8 +26,8 @@
     return [self swizzling_actionWithTitle:title style:style handler:^(UIAlertAction *action) {
         handler(action);
         
-        DSEvent *event = [DSEvent eventWithNonView:action andIndex:0];
-        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+        DSViewEvent *event = [DSViewEvent eventWithNonView:action andIndex:0];
+        [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     }];
 }
 

@@ -8,16 +8,17 @@
 
 #import "UICollectionView+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
 #import <objc/message.h>
+#import "DynamicStatistics.h"
 
 void swizzling_collectionView_didSelectItemAtIndexPath(id self, SEL _cmd, UICollectionView *collectionView, NSIndexPath *indexPath)
 {
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, collectionView, indexPath);
     
-    DSEvent *event = [DSEvent eventWithView:[collectionView cellForItemAtIndexPath:indexPath] andIndexPath:indexPath];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:[collectionView cellForItemAtIndexPath:indexPath] andIndexPath:indexPath];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 @implementation UICollectionView (DSAdditions)

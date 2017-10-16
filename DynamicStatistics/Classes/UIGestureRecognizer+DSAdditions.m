@@ -8,8 +8,9 @@
 
 #import "UIGestureRecognizer+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
 #import <objc/message.h>
+#import "DynamicStatistics.h"
 
 void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
@@ -35,8 +36,8 @@ void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
         eventType = DSEventType_GestureLongPress;
     }
     if (eventType != DSEventType_Unknown) {
-        DSEvent *event = [DSEvent eventWithView:sender.view andEventType:eventType];
-        NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+        DSViewEvent *event = [DSViewEvent eventWithView:sender.view andEventType:eventType];
+        [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     }
 }
 

@@ -23,6 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7777429F1F8F42440061D2A8 /* DSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7777429E1F8F42430061D2A8 /* DSWebViewController.m */; };
+		7777445F1F94A6D40061D2A8 /* DynamicStatistics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7777445E1F94A6D30061D2A8 /* DynamicStatistics.plist */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F308DCF8118708533D1FB167 /* Pods_DynamicStatistics_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F171B7C347A521A6B511C5EC /* Pods_DynamicStatistics_Example.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7777429D1F8F42430061D2A8 /* DSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSWebViewController.h; sourceTree = "<group>"; };
 		7777429E1F8F42430061D2A8 /* DSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSWebViewController.m; sourceTree = "<group>"; };
+		7777445E1F94A6D30061D2A8 /* DynamicStatistics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DynamicStatistics.plist; sourceTree = "<group>"; };
 		799435BD0DBC3178A22BD65F /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA67389FF2E1A583EDA3F0C /* Pods-DynamicStatistics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Tests/Pods-DynamicStatistics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7777445E1F94A6D30061D2A8 /* DynamicStatistics.plist */,
 				6003F595195388D20070C39A /* DynamicStatistics-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
@@ -291,6 +294,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				7777445F1F94A6D40061D2A8 /* DynamicStatistics.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

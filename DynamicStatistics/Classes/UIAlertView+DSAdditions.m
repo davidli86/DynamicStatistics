@@ -8,16 +8,17 @@
 
 #import "UIAlertView+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
 #import <objc/message.h>
+#import "DynamicStatistics.h"
 
 void swizzling_alertView_clickedButtonAtIndex(id self, SEL _cmd, UIAlertView *alertView, NSInteger buttonIndex)
 {
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, NSInteger))objc_msgSend)(self, swizzledSEL, alertView, buttonIndex);
 
-    DSEvent *event = [DSEvent eventWithView:alertView andIndex:buttonIndex];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:alertView andIndex:buttonIndex];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 @implementation UIAlertView (DSAdditions)

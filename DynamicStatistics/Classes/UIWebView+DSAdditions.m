@@ -8,16 +8,17 @@
 
 #import "UIWebView+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
-#import "DSEvent.h"
+#import "DSViewEvent.h"
 #import <objc/message.h>
+#import "DynamicStatistics.h"
 
 void swizzling_webViewDidStartLoad(id self, SEL _cmd, UIWebView *webView)
 {
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
     
-    DSEvent *event = [DSEvent eventWithView:webView andEventType:DSEventType_StartLoadUrl];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:webView andEventType:DSEventType_StartLoadUrl];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 void swizzling_webViewDidFinishLoad(id self, SEL _cmd, UIWebView *webView)
@@ -25,8 +26,8 @@ void swizzling_webViewDidFinishLoad(id self, SEL _cmd, UIWebView *webView)
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
     
-    DSEvent *event = [DSEvent eventWithView:webView andEventType:DSEventType_SucceedLoadUrl];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:webView andEventType:DSEventType_SucceedLoadUrl];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webView, NSError *error)
@@ -34,8 +35,8 @@ void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webVie
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
     ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, webView, error);
     
-    DSEvent *event = [DSEvent eventWithView:webView andEventType:DSEventType_FailLoadUrl];
-    NSLog(@"\nEvent Type: %@\nView Path: %@", event.eventTypeDescription, event.viewPath);
+    DSViewEvent *event = [DSViewEvent eventWithView:webView andEventType:DSEventType_FailLoadUrl];
+    [[DynamicStatistics sharedInstance] tryToLogEvent:event];
 }
 
 @implementation UIWebView (DSAdditions)

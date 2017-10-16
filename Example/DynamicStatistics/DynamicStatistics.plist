@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>viewPath</key>
+		<string>DSViewController-UIAlertAction_OK&amp;&amp;0-0</string>
+		<key>eventName</key>
+		<string>AlertVC-OK</string>
+	</dict>
+	<dict>
+		<key>viewPath</key>
+		<string>DSViewController-UIAlertAction_Cancel&amp;&amp;0-0</string>
+		<key>eventName</key>
+		<string>AlertVC-Cancel</string>
+	</dict>
+	<dict>
+		<key>viewPath</key>
+		<string>DSViewController-UIView-UITableView-UITableViewWrapperView-UITableViewCell&amp;&amp;0-0-1-0-*:*</string>
+		<key>eventName</key>
+		<string>HomePage-TableCell</string>
+	</dict>
+	<dict>
+		<key>viewPath</key>
+		<string>DSViewController-UIView-UIButton&amp;&amp;0-0-5</string>
+		<key>eventName</key>
+		<string>ShowAlertController</string>
+	</dict>
+	<dict>
+		<key>viewPath</key>
+		<string>DSViewController&amp;&amp;*</string>
+		<key>eventName</key>
+		<string>Homepage</string>
+	</dict>
+</array>
+</plist>

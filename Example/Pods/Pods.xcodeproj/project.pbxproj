@@ -7,43 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02FAC67883D136A68ABCD2ED13B67C7A /* UIApplication+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2793E3B57B50FA64E5731471AC3010 /* UIApplication+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		14C0816631A41594410DFC287F4AE176 /* UIAlertView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 196A293A550EF9030ED52A9FE92EB7F0 /* UIAlertView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A3B6539DCA83C283B27AB3CA969BDAD /* UICollectionView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 64A0F8E169BB08716AB4E74C45227E95 /* UICollectionView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1941A81FC8755CA7AF3CD1B137603BE4 /* UIAlertView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AFC836C368B67657B8582DBE4B02039B /* UIAlertView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C2E7DFD537F307DA2ABAE53E4C0C2C3 /* UIApplication+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B6200D0904DBE12CE028F6938F6B3F /* UIApplication+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		202F7422FB939893C6FCEC264118E422 /* UIView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03750C080EDE8CEEC67152CED09BFE2E /* UIView+DSAdditions.m */; };
+		2418FFB527E0FF3106D1AE1FB91A9777 /* UIAlertView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AF0CBFE82869EB285C352830CFE4B /* UIAlertView+DSAdditions.m */; };
 		26D86CF61A4F2D500C989D31EC88BF18 /* Pods-DynamicStatistics_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECEB78B1538142C575555FBBFD48AD7 /* Pods-DynamicStatistics_Example-dummy.m */; };
-		2ACC764C0923FC3D078B209EDCA2D886 /* UITableView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FC745DF8CEE29D3B93D00C7798E1E /* UITableView+DSAdditions.m */; };
-		31CD6FDDE796CEED22DDA7EF2E90ABEB /* UIGestureRecognizer+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 72EB39A768EE6FD8A923741984B8552B /* UIGestureRecognizer+DSAdditions.m */; };
-		38BDB929D7409AAFC5D9FC28723CCFB0 /* UIWebView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F8D5945638DD3FC65502870013EB3F /* UIWebView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4007A7E53B63440008C738055402CED3 /* DynamicStatistics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB33622435BFB0E0FA6113E6014995E /* DynamicStatistics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4D6AF7CFF7A2F7B1D2CB05FB745A548C /* UICollectionView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B53847D9EE30F687B351B66594D0669 /* UICollectionView+DSAdditions.m */; };
-		53EA7259F77CC86F66DB2AF7C4BCCC81 /* UINavigationController+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C33B3EFB352DE02ADAACC69A846AC12 /* UINavigationController+DSAdditions.m */; };
-		54188D63CD735B90DA16A93FE966EC83 /* NSObject+DSRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA40A3C61A5AE894DEB80C466EE2A035 /* NSObject+DSRuntimeAdditions.m */; };
-		54CD666A521240665BD330BA8050AFAF /* UIWebView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8181C53376240E8EE19457386BCE16EB /* UIWebView+DSAdditions.m */; };
-		5D456D29E853EE7CC6D5D0C8DA8991E0 /* UIViewController+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D9549AEC1896F193FC21072F9B7C3408 /* UIViewController+DSAdditions.m */; };
-		64B18F7D9781A9AC03BFD25EE36BAAB8 /* UIAlertAction+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF523417A409FB4D7B7485CF51A2AE /* UIAlertAction+DSAdditions.m */; };
+		28BC2C4B63246EB90BF9592100CA8F0B /* UIGestureRecognizer+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FB4795190E13AFDC355E602AD434E117 /* UIGestureRecognizer+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FECEDC60D17C096C1710BB03BB8FEBA /* UICollectionView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F6D538D31EFA05E42C896270973CC4 /* UICollectionView+DSAdditions.m */; };
+		3E4B5CEE5082FC0507DFFA9CE37019EE /* UIGestureRecognizer+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2908BA4EEB55EA604CD4C6E28F812713 /* UIGestureRecognizer+DSAdditions.m */; };
+		5CA7E8B95F83E5363AEA9653B785DCCB /* UIView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 510786ACD4E097981578C1FC478A102E /* UIView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D6F9428CF5C77ADD46C03BE7AB71DDE /* DSViewEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B62DC499B0D93FCB7C61206B6DDB1C23 /* DSViewEvent.m */; };
+		689B3A6F1A12F5B51070A9C668F79980 /* UIApplication+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 16ED6B6375EA9B5E777B2E3693849E36 /* UIApplication+DSAdditions.m */; };
+		6A23D6B02CA1097AB73058893EEE4959 /* UIAlertAction+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A4E439746B7A953D5682327BB232D503 /* UIAlertAction+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A6884124D876EFDAD6EDBAEDE68EBA6 /* UIViewController+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F84263C85363DBCF05DA28DED365456 /* UIViewController+DSAdditions.m */; };
 		6AAB3480BEE1BBE47C3093978368B839 /* Pods-DynamicStatistics_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E37D8A0CB90A5E69974FEAC79C9E2379 /* Pods-DynamicStatistics_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		748174247D20661519C7FF1B502009F3 /* UIAlertAction+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F43C0A89E82403394A4B11E91749FFE /* UIAlertAction+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		741B6DD510EB3AB0A2B031440CBB58CF /* UIScrollView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5BED2E2DA0F7A1018A3F3CB02D0B6 /* UIScrollView+DSAdditions.m */; };
+		7466F08A660C3C017B1F8F5447B727BB /* DynamicStatistics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB33622435BFB0E0FA6113E6014995E /* DynamicStatistics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77771345F36D1897174E8688F60A61E6 /* Pods-DynamicStatistics_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C521F5DFE4E329EA2AF71F72521B66C7 /* Pods-DynamicStatistics_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777742A21F8F694D0061D2A8 /* UIView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777742A01F8F694C0061D2A8 /* UIView+DSAdditions.h */; };
-		777742A31F8F694D0061D2A8 /* UIView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777742A11F8F694C0061D2A8 /* UIView+DSAdditions.m */; };
-		777742AA1F8F70820061D2A8 /* DSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 777742A81F8F70820061D2A8 /* DSEvent.h */; };
-		777742AB1F8F70820061D2A8 /* DSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 777742A91F8F70820061D2A8 /* DSEvent.m */; };
-		81E0FFA15E8B4BAA2AD0216FCEE67F26 /* UINavigationController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D9F0150DF6E46AE511591EB9BAC576 /* UINavigationController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8314BF59574B8CBB60706E8651092DC6 /* UIScrollView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72DE99D8BEC29E58F3CF79305D26AD /* UIScrollView+DSAdditions.m */; };
-		8E99A5977D38BC8F133290860C64DD23 /* NSObject+DSRuntimeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 268DE94FACBEE0B14AC03DA41DCB0137 /* NSObject+DSRuntimeAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95C4894E631844D2AAD4CCDE962C94C3 /* UITableView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F1DE9C54C2A683ACA566C7DC3054B69A /* UITableView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		824DCF2237C2020639DC18FF16C2BAF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		8AF8888854239B126567536C169AD720 /* UIAlertAction+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A30BDC2902FFCA6BE161E7DCA0806A /* UIAlertAction+DSAdditions.m */; };
+		8D33CB643CA7D4998CFF6D38396B3DE7 /* UINavigationController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96388FB5735D683DDEBA5265F7185E35 /* Pods-DynamicStatistics_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 696BB860497FDD9585EDB92F9DBF5001 /* Pods-DynamicStatistics_Tests-dummy.m */; };
-		9AD1B586F7304EC021C68AFCC3770F86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		B80D6EF59D10351B5A813246394BC9CE /* UIAlertView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E757123E0291A2E95B24F6FF76D4521 /* UIAlertView+DSAdditions.m */; };
+		9846A6AF2976065B35EFD31D0377A977 /* DynamicStatistics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2405D9AEDEADA6954A5136B15C2 /* DynamicStatistics-dummy.m */; };
+		A3E3E8A8FE497AF5FA7DFEEDA8C1AD80 /* UITableView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC552BB3F75EB9613FB71FEC8788424 /* UITableView+DSAdditions.m */; };
+		AEBF026E263D601F87A7CDAE07098751 /* UIActionSheet+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FD5FC34BA1522296915C42A3B69867 /* UIActionSheet+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3E64585AC63B754A3083B34C5AA5C84 /* NSObject+DSRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E77F36CF23E5E4D173A883119AFB086 /* NSObject+DSRuntimeAdditions.m */; };
+		B6FF72C4B1C5DA42F44AD9BDB5F269D6 /* UIWebView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F51ADBA4A14380044ABC6CDAC589357 /* UIWebView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7C4A198AF02AAD388797E25D318C8B3 /* NSObject+DSRuntimeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BD6642D20481172B4858DE2B56A23263 /* NSObject+DSRuntimeAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBF89332F44AE38C3296807ABF9A1127 /* UIViewController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FCD6568CAAF223AA647830562C894D5 /* UIViewController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4F0BAC85AA74DA658BDB50D99E8DC78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		D685B4AB6AE00840A870C6E7C40A1B91 /* UIScrollView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DA87D967CBA4F2F4A76E6D322D1F9B /* UIScrollView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6FB1A7FE764973B266196C28A2CD0CE /* UIGestureRecognizer+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BAA00CFF34CC6840147C239D820FE78 /* UIGestureRecognizer+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D83DFBD9E479B42C15A4481DC2130EE2 /* UITableView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC01623B3F35ECD54E3FF6AD343F6F78 /* UITableView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E035598E7C776973B872B22C4D82AB7C /* DynamicStatistics.h in Headers */ = {isa = PBXBuildFile; fileRef = C44E8E00E7C0DBF4E90F94E332A1A0C5 /* DynamicStatistics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E401EA66F0671CAC0DE76A001379F7C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E99F41CA35DD31FD576B39DBF89604DE /* DynamicStatistics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523F2405D9AEDEADA6954A5136B15C2 /* DynamicStatistics-dummy.m */; };
-		ECDE54D8A651FD80073599DD055EF3FF /* UIActionSheet+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2082B71F0250B9D2D3108CD730FF7224 /* UIActionSheet+DSAdditions.m */; };
-		F3E1553BCA0B2273782F474675E7252F /* UIApplication+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B738C29F71B017BEBF85076BE944B6 /* UIApplication+DSAdditions.m */; };
-		F84950B4D0C60BE5653DE1C9E1DDD036 /* UIActionSheet+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A243F56E329E300216604341CBA16310 /* UIActionSheet+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB997DAA60540F76C3D46399CD5BCE4D /* UICollectionView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F048ADDAEDF08974873842C62042CE9A /* UICollectionView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF75C89E26DE4A5AE494C057A256340E /* UIViewController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E14AC3F496D23CF828F6AF2205937D48 /* UIViewController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECF72D430BD857488D78C56C8D69302C /* DynamicStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8A9679673FC39C26A472300CC00522 /* DynamicStatistics.m */; };
+		F0412B464E57C797005089DC711E34EB /* DSViewEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6050288982758C0C443980F5CB14E165 /* DSViewEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F36FDA3E4C0B59DE41D131DCB1EFFD94 /* UIScrollView+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC50A43E96930105A9FA7BC82900B4D /* UIScrollView+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5D00149152F3507F1A1EAFC72EC0A33 /* UIActionSheet+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABD8777A8C1E29A269F89CD8C0906 /* UIActionSheet+DSAdditions.m */; };
+		FA6C35F6FF210923A24B36C9CEA97A0A /* UIWebView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A334B7C6D62478E085B186BC825C47 /* UIWebView+DSAdditions.m */; };
+		FEC94B47726F3320D21C6BB405DFB498 /* UINavigationController+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB8461F7E414F6FEFE970082DCD18CF /* UINavigationController+DSAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,70 +53,72 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DC36A2CCB69A5DE0D3FFF563C095E147;
+			remoteGlobalIDString = 88D29F35338FB63328120D7D53F4B595;
 			remoteInfo = DynamicStatistics;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F43C0A89E82403394A4B11E91749FFE /* UIAlertAction+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+DSAdditions.h"; sourceTree = "<group>"; };
+		00FD5FC34BA1522296915C42A3B69867 /* UIActionSheet+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+DSAdditions.h"; sourceTree = "<group>"; };
+		03750C080EDE8CEEC67152CED09BFE2E /* UIView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+DSAdditions.m"; sourceTree = "<group>"; };
+		16ED6B6375EA9B5E777B2E3693849E36 /* UIApplication+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+DSAdditions.m"; sourceTree = "<group>"; };
+		180AF0CBFE82869EB285C352830CFE4B /* UIAlertView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DSAdditions.m"; sourceTree = "<group>"; };
+		188ABD8777A8C1E29A269F89CD8C0906 /* UIActionSheet+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+DSAdditions.m"; sourceTree = "<group>"; };
 		18BFB2499D5AC91C0116EB7C5C13CE8B /* Pods-DynamicStatistics_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		196A293A550EF9030ED52A9FE92EB7F0 /* UIAlertView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DSAdditions.h"; sourceTree = "<group>"; };
-		2082B71F0250B9D2D3108CD730FF7224 /* UIActionSheet+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+DSAdditions.m"; sourceTree = "<group>"; };
+		1EC50A43E96930105A9FA7BC82900B4D /* UIScrollView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DSAdditions.h"; sourceTree = "<group>"; };
 		241ADBAC71C130B525A2EA7EE10CE304 /* Pods-DynamicStatistics_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Example-frameworks.sh"; sourceTree = "<group>"; };
-		268DE94FACBEE0B14AC03DA41DCB0137 /* NSObject+DSRuntimeAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+DSRuntimeAdditions.h"; sourceTree = "<group>"; };
-		29DA87D967CBA4F2F4A76E6D322D1F9B /* UIScrollView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DSAdditions.h"; sourceTree = "<group>"; };
-		33B738C29F71B017BEBF85076BE944B6 /* UIApplication+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+DSAdditions.m"; sourceTree = "<group>"; };
+		2908BA4EEB55EA604CD4C6E28F812713 /* UIGestureRecognizer+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+DSAdditions.m"; sourceTree = "<group>"; };
+		2DD5BED2E2DA0F7A1018A3F3CB02D0B6 /* UIScrollView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DSAdditions.m"; sourceTree = "<group>"; };
+		2F51ADBA4A14380044ABC6CDAC589357 /* UIWebView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DSAdditions.h"; sourceTree = "<group>"; };
+		2F84263C85363DBCF05DA28DED365456 /* UIViewController+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DSAdditions.m"; sourceTree = "<group>"; };
 		3BA9A863D8C4D9B9C27A3ACF25AFAFFF /* Pods-DynamicStatistics_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicStatistics_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		47F8D5945638DD3FC65502870013EB3F /* UIWebView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DSAdditions.h"; sourceTree = "<group>"; };
-		48BB715F1A9558A837E3320A92D1F9F3 /* DynamicStatistics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DynamicStatistics.modulemap; sourceTree = "<group>"; };
-		4B53847D9EE30F687B351B66594D0669 /* UICollectionView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+DSAdditions.m"; sourceTree = "<group>"; };
+		3E77F36CF23E5E4D173A883119AFB086 /* NSObject+DSRuntimeAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DSRuntimeAdditions.m"; sourceTree = "<group>"; };
+		3FC552BB3F75EB9613FB71FEC8788424 /* UITableView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DSAdditions.m"; sourceTree = "<group>"; };
+		48BB715F1A9558A837E3320A92D1F9F3 /* DynamicStatistics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DynamicStatistics.modulemap; sourceTree = "<group>"; };
 		4ECEB78B1538142C575555FBBFD48AD7 /* Pods-DynamicStatistics_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicStatistics_Example-dummy.m"; sourceTree = "<group>"; };
-		53BF523417A409FB4D7B7485CF51A2AE /* UIAlertAction+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+DSAdditions.m"; sourceTree = "<group>"; };
+		510786ACD4E097981578C1FC478A102E /* UIView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+DSAdditions.h"; sourceTree = "<group>"; };
 		5523F2405D9AEDEADA6954A5136B15C2 /* DynamicStatistics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicStatistics-dummy.m"; sourceTree = "<group>"; };
 		5E99CFCD51AD106C0439357ADECCC497 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F2793E3B57B50FA64E5731471AC3010 /* UIApplication+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIApplication+DSAdditions.h"; sourceTree = "<group>"; };
+		5FCD6568CAAF223AA647830562C894D5 /* UIViewController+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DSAdditions.h"; sourceTree = "<group>"; };
+		6050288982758C0C443980F5CB14E165 /* DSViewEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DSViewEvent.h; sourceTree = "<group>"; };
+		63B6200D0904DBE12CE028F6938F6B3F /* UIApplication+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIApplication+DSAdditions.h"; sourceTree = "<group>"; };
+		64A0F8E169BB08716AB4E74C45227E95 /* UICollectionView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+DSAdditions.h"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		696BB860497FDD9585EDB92F9DBF5001 /* Pods-DynamicStatistics_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicStatistics_Tests-dummy.m"; sourceTree = "<group>"; };
-		6BAA00CFF34CC6840147C239D820FE78 /* UIGestureRecognizer+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+DSAdditions.h"; sourceTree = "<group>"; };
 		6EB33622435BFB0E0FA6113E6014995E /* DynamicStatistics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics-umbrella.h"; sourceTree = "<group>"; };
-		716AAC477F910EAD58A8A4E600F098B4 /* Pods-DynamicStatistics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DynamicStatistics_Tests.modulemap"; sourceTree = "<group>"; };
-		72EB39A768EE6FD8A923741984B8552B /* UIGestureRecognizer+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+DSAdditions.m"; sourceTree = "<group>"; };
-		777742A01F8F694C0061D2A8 /* UIView+DSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DSAdditions.h"; sourceTree = "<group>"; };
-		777742A11F8F694C0061D2A8 /* UIView+DSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DSAdditions.m"; sourceTree = "<group>"; };
-		777742A81F8F70820061D2A8 /* DSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSEvent.h; sourceTree = "<group>"; };
-		777742A91F8F70820061D2A8 /* DSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSEvent.m; sourceTree = "<group>"; };
+		716AAC477F910EAD58A8A4E600F098B4 /* Pods-DynamicStatistics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DynamicStatistics_Tests.modulemap"; sourceTree = "<group>"; };
 		7B020D9B28157EE60D58CAE8EA08D750 /* Pods-DynamicStatistics_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Tests-resources.sh"; sourceTree = "<group>"; };
-		7C33B3EFB352DE02ADAACC69A846AC12 /* UINavigationController+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DSAdditions.m"; sourceTree = "<group>"; };
-		7E3FC745DF8CEE29D3B93D00C7798E1E /* UITableView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DSAdditions.m"; sourceTree = "<group>"; };
-		7F72DE99D8BEC29E58F3CF79305D26AD /* UIScrollView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DSAdditions.m"; sourceTree = "<group>"; };
-		8181C53376240E8EE19457386BCE16EB /* UIWebView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DSAdditions.m"; sourceTree = "<group>"; };
 		85F8DA67474C663463732BFFA0C86AC1 /* Pods-DynamicStatistics_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Example-resources.sh"; sourceTree = "<group>"; };
+		881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DSAdditions.h"; sourceTree = "<group>"; };
 		8AF310A2B3391D171AD61B04130F62AB /* Pods-DynamicStatistics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicStatistics_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8E757123E0291A2E95B24F6FF76D4521 /* UIAlertView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DSAdditions.m"; sourceTree = "<group>"; };
 		8F8FD0F7A0156030DA39323438F5E9C8 /* Pods-DynamicStatistics_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicStatistics_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		92620BA78B770A7E079E4BB928FA3E34 /* Pods-DynamicStatistics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicStatistics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9329C9122E7B31E1B15AA8B2A68A0E32 /* DynamicStatistics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97E11F6F86AB63360076EF996FC3C22A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A159853279932DCB5B0F1D52B6A27B20 /* Pods-DynamicStatistics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicStatistics_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A20510AAA0A687C5F795CCBA365AC7D6 /* Pods-DynamicStatistics_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicStatistics_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		A243F56E329E300216604341CBA16310 /* UIActionSheet+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+DSAdditions.h"; sourceTree = "<group>"; };
-		A36999C36F0BBF160D2E23F8A2B23C2B /* Pods_DynamicStatistics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8D9F0150DF6E46AE511591EB9BAC576 /* UINavigationController+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DSAdditions.h"; sourceTree = "<group>"; };
-		BC9C8845CADC0F1F570C7BC4FDDED30F /* DynamicStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0C4B5F5415B2045ED5BACB8135A3AEC /* Pods-DynamicStatistics_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DynamicStatistics_Example.modulemap"; sourceTree = "<group>"; };
+		A36999C36F0BBF160D2E23F8A2B23C2B /* Pods_DynamicStatistics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DynamicStatistics_Example.framework; path = "Pods-DynamicStatistics_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E439746B7A953D5682327BB232D503 /* UIAlertAction+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+DSAdditions.h"; sourceTree = "<group>"; };
+		AFC836C368B67657B8582DBE4B02039B /* UIAlertView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DSAdditions.h"; sourceTree = "<group>"; };
+		B62DC499B0D93FCB7C61206B6DDB1C23 /* DSViewEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DSViewEvent.m; sourceTree = "<group>"; };
+		BC9C8845CADC0F1F570C7BC4FDDED30F /* DynamicStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DynamicStatistics.framework; path = DynamicStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD6642D20481172B4858DE2B56A23263 /* NSObject+DSRuntimeAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+DSRuntimeAdditions.h"; sourceTree = "<group>"; };
+		C0C4B5F5415B2045ED5BACB8135A3AEC /* Pods-DynamicStatistics_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DynamicStatistics_Example.modulemap"; sourceTree = "<group>"; };
+		C44E8E00E7C0DBF4E90F94E332A1A0C5 /* DynamicStatistics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DynamicStatistics.h; sourceTree = "<group>"; };
 		C521F5DFE4E329EA2AF71F72521B66C7 /* Pods-DynamicStatistics_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicStatistics_Example-umbrella.h"; sourceTree = "<group>"; };
+		C7A334B7C6D62478E085B186BC825C47 /* UIWebView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DSAdditions.m"; sourceTree = "<group>"; };
+		D2F6D538D31EFA05E42C896270973CC4 /* UICollectionView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+DSAdditions.m"; sourceTree = "<group>"; };
 		D38A9C7E35A9B7A43A109626B54DA3B6 /* Pods-DynamicStatistics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicStatistics_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D9549AEC1896F193FC21072F9B7C3408 /* UIViewController+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DSAdditions.m"; sourceTree = "<group>"; };
-		E14AC3F496D23CF828F6AF2205937D48 /* UIViewController+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DSAdditions.h"; sourceTree = "<group>"; };
+		D6A30BDC2902FFCA6BE161E7DCA0806A /* UIAlertAction+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+DSAdditions.m"; sourceTree = "<group>"; };
+		DFB8461F7E414F6FEFE970082DCD18CF /* UINavigationController+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DSAdditions.m"; sourceTree = "<group>"; };
 		E37D8A0CB90A5E69974FEAC79C9E2379 /* Pods-DynamicStatistics_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicStatistics_Tests-umbrella.h"; sourceTree = "<group>"; };
-		EA40A3C61A5AE894DEB80C466EE2A035 /* NSObject+DSRuntimeAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DSRuntimeAdditions.m"; sourceTree = "<group>"; };
-		EAE30358636014BB53FCA6DA33B61EF5 /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F048ADDAEDF08974873842C62042CE9A /* UICollectionView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+DSAdditions.h"; sourceTree = "<group>"; };
-		F1DE9C54C2A683ACA566C7DC3054B69A /* UITableView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableView+DSAdditions.h"; sourceTree = "<group>"; };
+		EAE30358636014BB53FCA6DA33B61EF5 /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DynamicStatistics_Tests.framework; path = "Pods-DynamicStatistics_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC01623B3F35ECD54E3FF6AD343F6F78 /* UITableView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableView+DSAdditions.h"; sourceTree = "<group>"; };
 		F300F639FEF5C78225ABD8503B8EF567 /* Pods-DynamicStatistics_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicStatistics_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F41D04DA7AC8AABE4EA212E90213A0AA /* DynamicStatistics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicStatistics.xcconfig; sourceTree = "<group>"; };
+		FB4795190E13AFDC355E602AD434E117 /* UIGestureRecognizer+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+DSAdditions.h"; sourceTree = "<group>"; };
+		FC8A9679673FC39C26A472300CC00522 /* DynamicStatistics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DynamicStatistics.m; sourceTree = "<group>"; };
 		FE0351913EF7CB6D6D69CA75859799F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,11 +139,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FADB66699A9A027E45BA40DDD0C46D2E /* Frameworks */ = {
+		AC5698B6BFE50C8CE6D8F839A5A034ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AD1B586F7304EC021C68AFCC3770F86 /* Foundation.framework in Frameworks */,
+				824DCF2237C2020639DC18FF16C2BAF1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +208,7 @@
 		56B92D92E7120F0D816B022C3EAF1F27 /* DynamicStatistics */ = {
 			isa = PBXGroup;
 			children = (
-				946185394575BC02056D1AC62276CCD3 /* DynamicStatistics */,
+				C948B558C457A6037B9F4334E59742AB /* DynamicStatistics */,
 				6E94428D01103040DF2854197DF287F7 /* Support Files */,
 			);
 			name = DynamicStatistics;
@@ -233,41 +237,6 @@
 			path = "Example/Pods/Target Support Files/DynamicStatistics";
 			sourceTree = "<group>";
 		};
-		79F1953A81B44F8AEF37FEEAED058113 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				777742A81F8F70820061D2A8 /* DSEvent.h */,
-				777742A91F8F70820061D2A8 /* DSEvent.m */,
-				268DE94FACBEE0B14AC03DA41DCB0137 /* NSObject+DSRuntimeAdditions.h */,
-				EA40A3C61A5AE894DEB80C466EE2A035 /* NSObject+DSRuntimeAdditions.m */,
-				A243F56E329E300216604341CBA16310 /* UIActionSheet+DSAdditions.h */,
-				2082B71F0250B9D2D3108CD730FF7224 /* UIActionSheet+DSAdditions.m */,
-				0F43C0A89E82403394A4B11E91749FFE /* UIAlertAction+DSAdditions.h */,
-				53BF523417A409FB4D7B7485CF51A2AE /* UIAlertAction+DSAdditions.m */,
-				196A293A550EF9030ED52A9FE92EB7F0 /* UIAlertView+DSAdditions.h */,
-				8E757123E0291A2E95B24F6FF76D4521 /* UIAlertView+DSAdditions.m */,
-				5F2793E3B57B50FA64E5731471AC3010 /* UIApplication+DSAdditions.h */,
-				33B738C29F71B017BEBF85076BE944B6 /* UIApplication+DSAdditions.m */,
-				F048ADDAEDF08974873842C62042CE9A /* UICollectionView+DSAdditions.h */,
-				4B53847D9EE30F687B351B66594D0669 /* UICollectionView+DSAdditions.m */,
-				6BAA00CFF34CC6840147C239D820FE78 /* UIGestureRecognizer+DSAdditions.h */,
-				72EB39A768EE6FD8A923741984B8552B /* UIGestureRecognizer+DSAdditions.m */,
-				A8D9F0150DF6E46AE511591EB9BAC576 /* UINavigationController+DSAdditions.h */,
-				7C33B3EFB352DE02ADAACC69A846AC12 /* UINavigationController+DSAdditions.m */,
-				29DA87D967CBA4F2F4A76E6D322D1F9B /* UIScrollView+DSAdditions.h */,
-				7F72DE99D8BEC29E58F3CF79305D26AD /* UIScrollView+DSAdditions.m */,
-				F1DE9C54C2A683ACA566C7DC3054B69A /* UITableView+DSAdditions.h */,
-				7E3FC745DF8CEE29D3B93D00C7798E1E /* UITableView+DSAdditions.m */,
-				E14AC3F496D23CF828F6AF2205937D48 /* UIViewController+DSAdditions.h */,
-				D9549AEC1896F193FC21072F9B7C3408 /* UIViewController+DSAdditions.m */,
-				47F8D5945638DD3FC65502870013EB3F /* UIWebView+DSAdditions.h */,
-				8181C53376240E8EE19457386BCE16EB /* UIWebView+DSAdditions.m */,
-				777742A01F8F694C0061D2A8 /* UIView+DSAdditions.h */,
-				777742A11F8F694C0061D2A8 /* UIView+DSAdditions.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -279,12 +248,42 @@
 			);
 			sourceTree = "<group>";
 		};
-		946185394575BC02056D1AC62276CCD3 /* DynamicStatistics */ = {
+		A24AA953724811EAC2DA3A12FB34530C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				79F1953A81B44F8AEF37FEEAED058113 /* Classes */,
+				6050288982758C0C443980F5CB14E165 /* DSViewEvent.h */,
+				B62DC499B0D93FCB7C61206B6DDB1C23 /* DSViewEvent.m */,
+				C44E8E00E7C0DBF4E90F94E332A1A0C5 /* DynamicStatistics.h */,
+				FC8A9679673FC39C26A472300CC00522 /* DynamicStatistics.m */,
+				BD6642D20481172B4858DE2B56A23263 /* NSObject+DSRuntimeAdditions.h */,
+				3E77F36CF23E5E4D173A883119AFB086 /* NSObject+DSRuntimeAdditions.m */,
+				00FD5FC34BA1522296915C42A3B69867 /* UIActionSheet+DSAdditions.h */,
+				188ABD8777A8C1E29A269F89CD8C0906 /* UIActionSheet+DSAdditions.m */,
+				A4E439746B7A953D5682327BB232D503 /* UIAlertAction+DSAdditions.h */,
+				D6A30BDC2902FFCA6BE161E7DCA0806A /* UIAlertAction+DSAdditions.m */,
+				AFC836C368B67657B8582DBE4B02039B /* UIAlertView+DSAdditions.h */,
+				180AF0CBFE82869EB285C352830CFE4B /* UIAlertView+DSAdditions.m */,
+				63B6200D0904DBE12CE028F6938F6B3F /* UIApplication+DSAdditions.h */,
+				16ED6B6375EA9B5E777B2E3693849E36 /* UIApplication+DSAdditions.m */,
+				64A0F8E169BB08716AB4E74C45227E95 /* UICollectionView+DSAdditions.h */,
+				D2F6D538D31EFA05E42C896270973CC4 /* UICollectionView+DSAdditions.m */,
+				FB4795190E13AFDC355E602AD434E117 /* UIGestureRecognizer+DSAdditions.h */,
+				2908BA4EEB55EA604CD4C6E28F812713 /* UIGestureRecognizer+DSAdditions.m */,
+				881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */,
+				DFB8461F7E414F6FEFE970082DCD18CF /* UINavigationController+DSAdditions.m */,
+				1EC50A43E96930105A9FA7BC82900B4D /* UIScrollView+DSAdditions.h */,
+				2DD5BED2E2DA0F7A1018A3F3CB02D0B6 /* UIScrollView+DSAdditions.m */,
+				EC01623B3F35ECD54E3FF6AD343F6F78 /* UITableView+DSAdditions.h */,
+				3FC552BB3F75EB9613FB71FEC8788424 /* UITableView+DSAdditions.m */,
+				510786ACD4E097981578C1FC478A102E /* UIView+DSAdditions.h */,
+				03750C080EDE8CEEC67152CED09BFE2E /* UIView+DSAdditions.m */,
+				5FCD6568CAAF223AA647830562C894D5 /* UIViewController+DSAdditions.h */,
+				2F84263C85363DBCF05DA28DED365456 /* UIViewController+DSAdditions.m */,
+				2F51ADBA4A14380044ABC6CDAC589357 /* UIWebView+DSAdditions.h */,
+				C7A334B7C6D62478E085B186BC825C47 /* UIWebView+DSAdditions.m */,
 			);
-			path = DynamicStatistics;
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -293,6 +292,15 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C948B558C457A6037B9F4334E59742AB /* DynamicStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				A24AA953724811EAC2DA3A12FB34530C /* Classes */,
+			);
+			name = DynamicStatistics;
+			path = DynamicStatistics;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -306,33 +314,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		763D04FB0071D919E7E26EC5F1A612B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0412B464E57C797005089DC711E34EB /* DSViewEvent.h in Headers */,
+				7466F08A660C3C017B1F8F5447B727BB /* DynamicStatistics-umbrella.h in Headers */,
+				E035598E7C776973B872B22C4D82AB7C /* DynamicStatistics.h in Headers */,
+				C7C4A198AF02AAD388797E25D318C8B3 /* NSObject+DSRuntimeAdditions.h in Headers */,
+				AEBF026E263D601F87A7CDAE07098751 /* UIActionSheet+DSAdditions.h in Headers */,
+				6A23D6B02CA1097AB73058893EEE4959 /* UIAlertAction+DSAdditions.h in Headers */,
+				1941A81FC8755CA7AF3CD1B137603BE4 /* UIAlertView+DSAdditions.h in Headers */,
+				1C2E7DFD537F307DA2ABAE53E4C0C2C3 /* UIApplication+DSAdditions.h in Headers */,
+				0A3B6539DCA83C283B27AB3CA969BDAD /* UICollectionView+DSAdditions.h in Headers */,
+				28BC2C4B63246EB90BF9592100CA8F0B /* UIGestureRecognizer+DSAdditions.h in Headers */,
+				8D33CB643CA7D4998CFF6D38396B3DE7 /* UINavigationController+DSAdditions.h in Headers */,
+				F36FDA3E4C0B59DE41D131DCB1EFFD94 /* UIScrollView+DSAdditions.h in Headers */,
+				D83DFBD9E479B42C15A4481DC2130EE2 /* UITableView+DSAdditions.h in Headers */,
+				5CA7E8B95F83E5363AEA9653B785DCCB /* UIView+DSAdditions.h in Headers */,
+				CBF89332F44AE38C3296807ABF9A1127 /* UIViewController+DSAdditions.h in Headers */,
+				B6FF72C4B1C5DA42F44AD9BDB5F269D6 /* UIWebView+DSAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9B0C8AFAF7A451C28C4DCF6FB2CAB5C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				77771345F36D1897174E8688F60A61E6 /* Pods-DynamicStatistics_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D86B9F1EE92551DB123B501DA20E7B94 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				777742A21F8F694D0061D2A8 /* UIView+DSAdditions.h in Headers */,
-				4007A7E53B63440008C738055402CED3 /* DynamicStatistics-umbrella.h in Headers */,
-				8E99A5977D38BC8F133290860C64DD23 /* NSObject+DSRuntimeAdditions.h in Headers */,
-				F84950B4D0C60BE5653DE1C9E1DDD036 /* UIActionSheet+DSAdditions.h in Headers */,
-				748174247D20661519C7FF1B502009F3 /* UIAlertAction+DSAdditions.h in Headers */,
-				14C0816631A41594410DFC287F4AE176 /* UIAlertView+DSAdditions.h in Headers */,
-				02FAC67883D136A68ABCD2ED13B67C7A /* UIApplication+DSAdditions.h in Headers */,
-				777742AA1F8F70820061D2A8 /* DSEvent.h in Headers */,
-				FB997DAA60540F76C3D46399CD5BCE4D /* UICollectionView+DSAdditions.h in Headers */,
-				D6FB1A7FE764973B266196C28A2CD0CE /* UIGestureRecognizer+DSAdditions.h in Headers */,
-				81E0FFA15E8B4BAA2AD0216FCEE67F26 /* UINavigationController+DSAdditions.h in Headers */,
-				D685B4AB6AE00840A870C6E7C40A1B91 /* UIScrollView+DSAdditions.h in Headers */,
-				95C4894E631844D2AAD4CCDE962C94C3 /* UITableView+DSAdditions.h in Headers */,
-				FF75C89E26DE4A5AE494C057A256340E /* UIViewController+DSAdditions.h in Headers */,
-				38BDB929D7409AAFC5D9FC28723CCFB0 /* UIWebView+DSAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +374,23 @@
 			productReference = A36999C36F0BBF160D2E23F8A2B23C2B /* Pods_DynamicStatistics_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		88D29F35338FB63328120D7D53F4B595 /* DynamicStatistics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3BFB5FF29308C77A7533443EF53CF7D /* Build configuration list for PBXNativeTarget "DynamicStatistics" */;
+			buildPhases = (
+				770B6997D200693AC3E913FD2D612139 /* Sources */,
+				AC5698B6BFE50C8CE6D8F839A5A034ED /* Frameworks */,
+				763D04FB0071D919E7E26EC5F1A612B6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicStatistics;
+			productName = DynamicStatistics;
+			productReference = BC9C8845CADC0F1F570C7BC4FDDED30F /* DynamicStatistics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D7A98FCC54A99EFF428972FA7A3FC35E /* Pods-DynamicStatistics_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6ED5591515169EF52ADDDE208F92C4EA /* Build configuration list for PBXNativeTarget "Pods-DynamicStatistics_Tests" */;
@@ -380,23 +406,6 @@
 			name = "Pods-DynamicStatistics_Tests";
 			productName = "Pods-DynamicStatistics_Tests";
 			productReference = EAE30358636014BB53FCA6DA33B61EF5 /* Pods_DynamicStatistics_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		DC36A2CCB69A5DE0D3FFF563C095E147 /* DynamicStatistics */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9CBAE4E76C8D1C0A458DB5E5748DA50D /* Build configuration list for PBXNativeTarget "DynamicStatistics" */;
-			buildPhases = (
-				94921706AC9FA5DA4F87B6AF49D98CA0 /* Sources */,
-				FADB66699A9A027E45BA40DDD0C46D2E /* Frameworks */,
-				D86B9F1EE92551DB123B501DA20E7B94 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DynamicStatistics;
-			productName = DynamicStatistics;
-			productReference = BC9C8845CADC0F1F570C7BC4FDDED30F /* DynamicStatistics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -420,7 +429,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC36A2CCB69A5DE0D3FFF563C095E147 /* DynamicStatistics */,
+				88D29F35338FB63328120D7D53F4B595 /* DynamicStatistics */,
 				3D885239766EA8584038D385FDEB9399 /* Pods-DynamicStatistics_Example */,
 				D7A98FCC54A99EFF428972FA7A3FC35E /* Pods-DynamicStatistics_Tests */,
 			);
@@ -436,25 +445,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94921706AC9FA5DA4F87B6AF49D98CA0 /* Sources */ = {
+		770B6997D200693AC3E913FD2D612139 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E99F41CA35DD31FD576B39DBF89604DE /* DynamicStatistics-dummy.m in Sources */,
-				54188D63CD735B90DA16A93FE966EC83 /* NSObject+DSRuntimeAdditions.m in Sources */,
-				ECDE54D8A651FD80073599DD055EF3FF /* UIActionSheet+DSAdditions.m in Sources */,
-				64B18F7D9781A9AC03BFD25EE36BAAB8 /* UIAlertAction+DSAdditions.m in Sources */,
-				B80D6EF59D10351B5A813246394BC9CE /* UIAlertView+DSAdditions.m in Sources */,
-				F3E1553BCA0B2273782F474675E7252F /* UIApplication+DSAdditions.m in Sources */,
-				4D6AF7CFF7A2F7B1D2CB05FB745A548C /* UICollectionView+DSAdditions.m in Sources */,
-				31CD6FDDE796CEED22DDA7EF2E90ABEB /* UIGestureRecognizer+DSAdditions.m in Sources */,
-				53EA7259F77CC86F66DB2AF7C4BCCC81 /* UINavigationController+DSAdditions.m in Sources */,
-				8314BF59574B8CBB60706E8651092DC6 /* UIScrollView+DSAdditions.m in Sources */,
-				2ACC764C0923FC3D078B209EDCA2D886 /* UITableView+DSAdditions.m in Sources */,
-				777742A31F8F694D0061D2A8 /* UIView+DSAdditions.m in Sources */,
-				777742AB1F8F70820061D2A8 /* DSEvent.m in Sources */,
-				5D456D29E853EE7CC6D5D0C8DA8991E0 /* UIViewController+DSAdditions.m in Sources */,
-				54CD666A521240665BD330BA8050AFAF /* UIWebView+DSAdditions.m in Sources */,
+				5D6F9428CF5C77ADD46C03BE7AB71DDE /* DSViewEvent.m in Sources */,
+				9846A6AF2976065B35EFD31D0377A977 /* DynamicStatistics-dummy.m in Sources */,
+				ECF72D430BD857488D78C56C8D69302C /* DynamicStatistics.m in Sources */,
+				B3E64585AC63B754A3083B34C5AA5C84 /* NSObject+DSRuntimeAdditions.m in Sources */,
+				F5D00149152F3507F1A1EAFC72EC0A33 /* UIActionSheet+DSAdditions.m in Sources */,
+				8AF8888854239B126567536C169AD720 /* UIAlertAction+DSAdditions.m in Sources */,
+				2418FFB527E0FF3106D1AE1FB91A9777 /* UIAlertView+DSAdditions.m in Sources */,
+				689B3A6F1A12F5B51070A9C668F79980 /* UIApplication+DSAdditions.m in Sources */,
+				2FECEDC60D17C096C1710BB03BB8FEBA /* UICollectionView+DSAdditions.m in Sources */,
+				3E4B5CEE5082FC0507DFFA9CE37019EE /* UIGestureRecognizer+DSAdditions.m in Sources */,
+				FEC94B47726F3320D21C6BB405DFB498 /* UINavigationController+DSAdditions.m in Sources */,
+				741B6DD510EB3AB0A2B031440CBB58CF /* UIScrollView+DSAdditions.m in Sources */,
+				A3E3E8A8FE497AF5FA7DFEEDA8C1AD80 /* UITableView+DSAdditions.m in Sources */,
+				202F7422FB939893C6FCEC264118E422 /* UIView+DSAdditions.m in Sources */,
+				6A6884124D876EFDAD6EDBAEDE68EBA6 /* UIViewController+DSAdditions.m in Sources */,
+				FA6C35F6FF210923A24B36C9CEA97A0A /* UIWebView+DSAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +482,7 @@
 		00EC6A8BB04FCEFF894C996467D08569 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DynamicStatistics;
-			target = DC36A2CCB69A5DE0D3FFF563C095E147 /* DynamicStatistics */;
+			target = 88D29F35338FB63328120D7D53F4B595 /* DynamicStatistics */;
 			targetProxy = A04416ABE3E7570D1DE93AD45DC7B088 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -506,6 +516,38 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_DynamicStatistics_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		14DB10F45825DC6D540F0DFA722F489F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41D04DA7AC8AABE4EA212E90213A0AA /* DynamicStatistics.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicStatistics/DynamicStatistics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicStatistics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicStatistics/DynamicStatistics.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DynamicStatistics;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -557,6 +599,38 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		24E99556E952D486AEED3957687E938B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41D04DA7AC8AABE4EA212E90213A0AA /* DynamicStatistics.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicStatistics/DynamicStatistics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicStatistics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicStatistics/DynamicStatistics.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DynamicStatistics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		38199C98DFD8963F93CAD8305855F56B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -629,70 +703,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		BC804AF93BDCD25F731357937133F1D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F41D04DA7AC8AABE4EA212E90213A0AA /* DynamicStatistics.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DynamicStatistics/DynamicStatistics-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DynamicStatistics/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DynamicStatistics/DynamicStatistics.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DynamicStatistics;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CECFBE161A1821EBD6A551483FBED7B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F41D04DA7AC8AABE4EA212E90213A0AA /* DynamicStatistics.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DynamicStatistics/DynamicStatistics-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DynamicStatistics/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DynamicStatistics/DynamicStatistics.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DynamicStatistics;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -799,11 +809,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CBAE4E76C8D1C0A458DB5E5748DA50D /* Build configuration list for PBXNativeTarget "DynamicStatistics" */ = {
+		B3BFB5FF29308C77A7533443EF53CF7D /* Build configuration list for PBXNativeTarget "DynamicStatistics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CECFBE161A1821EBD6A551483FBED7B4 /* Debug */,
-				BC804AF93BDCD25F731357937133F1D8 /* Release */,
+				24E99556E952D486AEED3957687E938B /* Debug */,
+				14DB10F45825DC6D540F0DFA722F489F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
