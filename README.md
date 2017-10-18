@@ -17,12 +17,75 @@ DynamicStatistics is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DynamicStatistics'
+pod 'DynamicStatistics_OC'
+```
+
+## What is it?
+It is a simple library that helps to collection user action dynamically.
+
+##How to use?
+Setup user actions you care about with a local plist file or from network.
+
+###With local plist file:
+
+```objective-c
+[[DynamicStatistics sharedInstance] setupWithPlist:@"DynamicStatistics" andEventLogBlock:^(DSViewEvent *event) {
+//todo: log the event with your service or any other analytic platform, like Flurry.
+}];
+```
+###From network:
+```objective-c
+[[DynamicStatistics sharedInstance] setupWithUrlString:@"http://xxx.com/version=1.0" andEventLogBlock:^(DSViewEvent *event) {
+//todo: log the event with your service or any other analytic platform, like Flurry.
+}];
+```
+##Plist file format
+The local plist file format and text result from network should keep the same format. 
+`viewPath` is the key to identify the view. You can get it when testing from console. It is like a simplified XPath, but with index in the end. You can set index as `*` to represent any position. `eventName` is a readable name to describe the `viewPath`.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>viewPath</key>
+            <string>DSViewController-UIAlertAction_OK&amp;&amp;0-0</string>
+            <key>eventName</key>
+            <string>AlertVC-OK</string>
+        </dict>
+        <dict>
+            <key>viewPath</key>
+            <string>DSViewController-UIAlertAction_Cancel&amp;&amp;0-0</string>
+            <key>eventName</key>
+            <string>AlertVC-Cancel</string>
+        </dict>
+        <dict>
+            <key>viewPath</key>
+            <string>DSViewController-UIView-UITableView-UITableViewWrapperView-UITableViewCell&amp;&amp;0-0-1-0-*:*</string>
+            <key>eventName</key>
+            <string>HomePage-TableCell</string>
+        </dict>
+        <dict>
+            <key>viewPath</key>
+            <string>DSViewController-UIView-UIButton&amp;&amp;0-0-5</string>
+            <key>eventName</key>
+            <string>ShowAlertController</string>
+        </dict>
+        <dict>
+            <key>viewPath</key>
+            <string>DSViewController&amp;&amp;*</string>
+            <key>eventName</key>
+            <string>Homepage</string>
+        </dict>
+    </array>
+</plist>
 ```
 
 ## Author
 
-492334421@qq.com, David.Li@activenetwork.com
+David.Li, David.Li@activenetwork.com
 
 ## License
 
