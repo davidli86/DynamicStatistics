@@ -69,7 +69,7 @@
 		799435BD0DBC3178A22BD65F /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA67389FF2E1A583EDA3F0C /* Pods-DynamicStatistics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Tests/Pods-DynamicStatistics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D38F7A2ED5B83D441AB8305B /* DynamicStatistics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DynamicStatistics.podspec; path = ../DynamicStatistics.podspec; sourceTree = "<group>"; };
+		D38F7A2ED5B83D441AB8305B /* DynamicStatistics_OC.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DynamicStatistics_OC.podspec; path = ../DynamicStatistics_OC.podspec; sourceTree = "<group>"; };
 		E0234735D9116C284E80A883 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F171B7C347A521A6B511C5EC /* Pods_DynamicStatistics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,7 +186,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				D38F7A2ED5B83D441AB8305B /* DynamicStatistics.podspec */,
+				D38F7A2ED5B83D441AB8305B /* DynamicStatistics_OC.podspec */,
 				E0234735D9116C284E80A883 /* README.md */,
 				2C7C663A13560EA93A3FAC1C /* LICENSE */,
 			);
