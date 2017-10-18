@@ -23,23 +23,23 @@ pod 'DynamicStatistics_OC'
 ## What is it?
 It is a simple library that helps to collection user action dynamically.
 
-##How to use?
+## How to use?
 Setup user actions you care about with a local plist file or from network.
 
-###With local plist file:
+### With local plist file:
 
 ```objective-c
 [[DynamicStatistics sharedInstance] setupWithPlist:@"DynamicStatistics" andEventLogBlock:^(DSViewEvent *event) {
 //todo: log the event with your service or any other analytic platform, like Flurry.
 }];
 ```
-###From network:
+### From network:
 ```objective-c
 [[DynamicStatistics sharedInstance] setupWithUrlString:@"http://xxx.com/version=1.0" andEventLogBlock:^(DSViewEvent *event) {
 //todo: log the event with your service or any other analytic platform, like Flurry.
 }];
 ```
-##Plist file format
+## Plist file format
 The local plist file format and text result from network should keep the same format. 
 `viewPath` is the key to identify the view. You can get it when testing from console. It is like a simplified XPath, but with index in the end. You can set index as `*` to represent any position. `eventName` is a readable name to describe the `viewPath`.
 
