@@ -25,6 +25,10 @@
 		741B6DD510EB3AB0A2B031440CBB58CF /* UIScrollView+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5BED2E2DA0F7A1018A3F3CB02D0B6 /* UIScrollView+DSAdditions.m */; };
 		7466F08A660C3C017B1F8F5447B727BB /* DynamicStatistics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB33622435BFB0E0FA6113E6014995E /* DynamicStatistics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77771345F36D1897174E8688F60A61E6 /* Pods-DynamicStatistics_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C521F5DFE4E329EA2AF71F72521B66C7 /* Pods-DynamicStatistics_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777744C71F987DDA0061D2A8 /* DSViewEvent+DSPerformance.h in Headers */ = {isa = PBXBuildFile; fileRef = 777744C51F987DDA0061D2A8 /* DSViewEvent+DSPerformance.h */; };
+		777744C81F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 777744C61F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m */; };
+		777744CB1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h in Headers */ = {isa = PBXBuildFile; fileRef = 777744C91F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h */; };
+		777744CC1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 777744CA1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m */; };
 		824DCF2237C2020639DC18FF16C2BAF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		8AF8888854239B126567536C169AD720 /* UIAlertAction+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A30BDC2902FFCA6BE161E7DCA0806A /* UIAlertAction+DSAdditions.m */; };
 		8D33CB643CA7D4998CFF6D38396B3DE7 /* UINavigationController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,7 +78,7 @@
 		3BA9A863D8C4D9B9C27A3ACF25AFAFFF /* Pods-DynamicStatistics_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicStatistics_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3E77F36CF23E5E4D173A883119AFB086 /* NSObject+DSRuntimeAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DSRuntimeAdditions.m"; sourceTree = "<group>"; };
 		3FC552BB3F75EB9613FB71FEC8788424 /* UITableView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DSAdditions.m"; sourceTree = "<group>"; };
-		48BB715F1A9558A837E3320A92D1F9F3 /* DynamicStatistics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DynamicStatistics.modulemap; sourceTree = "<group>"; };
+		48BB715F1A9558A837E3320A92D1F9F3 /* DynamicStatistics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DynamicStatistics.modulemap; sourceTree = "<group>"; };
 		4ECEB78B1538142C575555FBBFD48AD7 /* Pods-DynamicStatistics_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicStatistics_Example-dummy.m"; sourceTree = "<group>"; };
 		510786ACD4E097981578C1FC478A102E /* UIView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+DSAdditions.h"; sourceTree = "<group>"; };
 		5523F2405D9AEDEADA6954A5136B15C2 /* DynamicStatistics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicStatistics-dummy.m"; sourceTree = "<group>"; };
@@ -86,7 +90,11 @@
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		696BB860497FDD9585EDB92F9DBF5001 /* Pods-DynamicStatistics_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DynamicStatistics_Tests-dummy.m"; sourceTree = "<group>"; };
 		6EB33622435BFB0E0FA6113E6014995E /* DynamicStatistics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics-umbrella.h"; sourceTree = "<group>"; };
-		716AAC477F910EAD58A8A4E600F098B4 /* Pods-DynamicStatistics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DynamicStatistics_Tests.modulemap"; sourceTree = "<group>"; };
+		716AAC477F910EAD58A8A4E600F098B4 /* Pods-DynamicStatistics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DynamicStatistics_Tests.modulemap"; sourceTree = "<group>"; };
+		777744C51F987DDA0061D2A8 /* DSViewEvent+DSPerformance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DSViewEvent+DSPerformance.h"; sourceTree = "<group>"; };
+		777744C61F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DSViewEvent+DSPerformance.m"; sourceTree = "<group>"; };
+		777744C91F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics+DSPerformance.h"; sourceTree = "<group>"; };
+		777744CA1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DynamicStatistics+DSPerformance.m"; sourceTree = "<group>"; };
 		7B020D9B28157EE60D58CAE8EA08D750 /* Pods-DynamicStatistics_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Tests-resources.sh"; sourceTree = "<group>"; };
 		85F8DA67474C663463732BFFA0C86AC1 /* Pods-DynamicStatistics_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Example-resources.sh"; sourceTree = "<group>"; };
 		881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DSAdditions.h"; sourceTree = "<group>"; };
@@ -94,17 +102,17 @@
 		8F8FD0F7A0156030DA39323438F5E9C8 /* Pods-DynamicStatistics_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicStatistics_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		92620BA78B770A7E079E4BB928FA3E34 /* Pods-DynamicStatistics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicStatistics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9329C9122E7B31E1B15AA8B2A68A0E32 /* DynamicStatistics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97E11F6F86AB63360076EF996FC3C22A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A159853279932DCB5B0F1D52B6A27B20 /* Pods-DynamicStatistics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DynamicStatistics_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A20510AAA0A687C5F795CCBA365AC7D6 /* Pods-DynamicStatistics_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DynamicStatistics_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		A36999C36F0BBF160D2E23F8A2B23C2B /* Pods_DynamicStatistics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DynamicStatistics_Example.framework; path = "Pods-DynamicStatistics_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36999C36F0BBF160D2E23F8A2B23C2B /* Pods_DynamicStatistics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E439746B7A953D5682327BB232D503 /* UIAlertAction+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+DSAdditions.h"; sourceTree = "<group>"; };
 		AFC836C368B67657B8582DBE4B02039B /* UIAlertView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DSAdditions.h"; sourceTree = "<group>"; };
 		B62DC499B0D93FCB7C61206B6DDB1C23 /* DSViewEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DSViewEvent.m; sourceTree = "<group>"; };
-		BC9C8845CADC0F1F570C7BC4FDDED30F /* DynamicStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DynamicStatistics.framework; path = DynamicStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC9C8845CADC0F1F570C7BC4FDDED30F /* DynamicStatistics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicStatistics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6642D20481172B4858DE2B56A23263 /* NSObject+DSRuntimeAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+DSRuntimeAdditions.h"; sourceTree = "<group>"; };
-		C0C4B5F5415B2045ED5BACB8135A3AEC /* Pods-DynamicStatistics_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DynamicStatistics_Example.modulemap"; sourceTree = "<group>"; };
+		C0C4B5F5415B2045ED5BACB8135A3AEC /* Pods-DynamicStatistics_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DynamicStatistics_Example.modulemap"; sourceTree = "<group>"; };
 		C44E8E00E7C0DBF4E90F94E332A1A0C5 /* DynamicStatistics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DynamicStatistics.h; sourceTree = "<group>"; };
 		C521F5DFE4E329EA2AF71F72521B66C7 /* Pods-DynamicStatistics_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicStatistics_Example-umbrella.h"; sourceTree = "<group>"; };
 		C7A334B7C6D62478E085B186BC825C47 /* UIWebView+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DSAdditions.m"; sourceTree = "<group>"; };
@@ -113,7 +121,7 @@
 		D6A30BDC2902FFCA6BE161E7DCA0806A /* UIAlertAction+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+DSAdditions.m"; sourceTree = "<group>"; };
 		DFB8461F7E414F6FEFE970082DCD18CF /* UINavigationController+DSAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DSAdditions.m"; sourceTree = "<group>"; };
 		E37D8A0CB90A5E69974FEAC79C9E2379 /* Pods-DynamicStatistics_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DynamicStatistics_Tests-umbrella.h"; sourceTree = "<group>"; };
-		EAE30358636014BB53FCA6DA33B61EF5 /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DynamicStatistics_Tests.framework; path = "Pods-DynamicStatistics_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE30358636014BB53FCA6DA33B61EF5 /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC01623B3F35ECD54E3FF6AD343F6F78 /* UITableView+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableView+DSAdditions.h"; sourceTree = "<group>"; };
 		F300F639FEF5C78225ABD8503B8EF567 /* Pods-DynamicStatistics_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DynamicStatistics_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F41D04DA7AC8AABE4EA212E90213A0AA /* DynamicStatistics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicStatistics.xcconfig; sourceTree = "<group>"; };
@@ -253,8 +261,12 @@
 			children = (
 				6050288982758C0C443980F5CB14E165 /* DSViewEvent.h */,
 				B62DC499B0D93FCB7C61206B6DDB1C23 /* DSViewEvent.m */,
+				777744C51F987DDA0061D2A8 /* DSViewEvent+DSPerformance.h */,
+				777744C61F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m */,
 				C44E8E00E7C0DBF4E90F94E332A1A0C5 /* DynamicStatistics.h */,
 				FC8A9679673FC39C26A472300CC00522 /* DynamicStatistics.m */,
+				777744C91F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h */,
+				777744CA1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m */,
 				BD6642D20481172B4858DE2B56A23263 /* NSObject+DSRuntimeAdditions.h */,
 				3E77F36CF23E5E4D173A883119AFB086 /* NSObject+DSRuntimeAdditions.m */,
 				00FD5FC34BA1522296915C42A3B69867 /* UIActionSheet+DSAdditions.h */,
@@ -282,7 +294,6 @@
 				2F51ADBA4A14380044ABC6CDAC589357 /* UIWebView+DSAdditions.h */,
 				C7A334B7C6D62478E085B186BC825C47 /* UIWebView+DSAdditions.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -299,7 +310,6 @@
 			children = (
 				A24AA953724811EAC2DA3A12FB34530C /* Classes */,
 			);
-			name = DynamicStatistics;
 			path = DynamicStatistics;
 			sourceTree = "<group>";
 		};
@@ -326,12 +336,14 @@
 				6A23D6B02CA1097AB73058893EEE4959 /* UIAlertAction+DSAdditions.h in Headers */,
 				1941A81FC8755CA7AF3CD1B137603BE4 /* UIAlertView+DSAdditions.h in Headers */,
 				1C2E7DFD537F307DA2ABAE53E4C0C2C3 /* UIApplication+DSAdditions.h in Headers */,
+				777744C71F987DDA0061D2A8 /* DSViewEvent+DSPerformance.h in Headers */,
 				0A3B6539DCA83C283B27AB3CA969BDAD /* UICollectionView+DSAdditions.h in Headers */,
 				28BC2C4B63246EB90BF9592100CA8F0B /* UIGestureRecognizer+DSAdditions.h in Headers */,
 				8D33CB643CA7D4998CFF6D38396B3DE7 /* UINavigationController+DSAdditions.h in Headers */,
 				F36FDA3E4C0B59DE41D131DCB1EFFD94 /* UIScrollView+DSAdditions.h in Headers */,
 				D83DFBD9E479B42C15A4481DC2130EE2 /* UITableView+DSAdditions.h in Headers */,
 				5CA7E8B95F83E5363AEA9653B785DCCB /* UIView+DSAdditions.h in Headers */,
+				777744CB1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h in Headers */,
 				CBF89332F44AE38C3296807ABF9A1127 /* UIViewController+DSAdditions.h in Headers */,
 				B6FF72C4B1C5DA42F44AD9BDB5F269D6 /* UIWebView+DSAdditions.h in Headers */,
 			);
@@ -451,6 +463,7 @@
 			files = (
 				5D6F9428CF5C77ADD46C03BE7AB71DDE /* DSViewEvent.m in Sources */,
 				9846A6AF2976065B35EFD31D0377A977 /* DynamicStatistics-dummy.m in Sources */,
+				777744C81F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m in Sources */,
 				ECF72D430BD857488D78C56C8D69302C /* DynamicStatistics.m in Sources */,
 				B3E64585AC63B754A3083B34C5AA5C84 /* NSObject+DSRuntimeAdditions.m in Sources */,
 				F5D00149152F3507F1A1EAFC72EC0A33 /* UIActionSheet+DSAdditions.m in Sources */,
@@ -460,6 +473,7 @@
 				2FECEDC60D17C096C1710BB03BB8FEBA /* UICollectionView+DSAdditions.m in Sources */,
 				3E4B5CEE5082FC0507DFFA9CE37019EE /* UIGestureRecognizer+DSAdditions.m in Sources */,
 				FEC94B47726F3320D21C6BB405DFB498 /* UINavigationController+DSAdditions.m in Sources */,
+				777744CC1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m in Sources */,
 				741B6DD510EB3AB0A2B031440CBB58CF /* UIScrollView+DSAdditions.m in Sources */,
 				A3E3E8A8FE497AF5FA7DFEEDA8C1AD80 /* UITableView+DSAdditions.m in Sources */,
 				202F7422FB939893C6FCEC264118E422 /* UIView+DSAdditions.m in Sources */,

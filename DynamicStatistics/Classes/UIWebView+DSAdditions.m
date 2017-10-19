@@ -14,29 +14,29 @@
 
 void swizzling_webViewDidStartLoad(id self, SEL _cmd, UIWebView *webView)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:webView andEventType:DSEventType_StartLoadUrl];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
 }
 
 void swizzling_webViewDidFinishLoad(id self, SEL _cmd, UIWebView *webView)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:webView andEventType:DSEventType_SucceedLoadUrl];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
 }
 
 void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webView, NSError *error)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, webView, error);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:webView andEventType:DSEventType_FailLoadUrl];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, webView, error);
 }
 
 @implementation UIWebView (DSAdditions)

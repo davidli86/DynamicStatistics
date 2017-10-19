@@ -118,8 +118,10 @@ static DynamicStatistics *_instance;
 
 -(void)tryToLogEvent:(DSViewEvent *)originalEvent
 {
+#ifdef DEBUG
     NSLog(@"Try to Log Event\nEvent Type: %@\nView Path: %@", originalEvent.eventTypeDescription, originalEvent.viewPath);
-
+#endif
+    
     if (_eventLogBlock == nil) {
         return;
     }

@@ -14,11 +14,11 @@
 
 void swizzling_tableView_didSelectRowAtIndexPath (id self, SEL _cmd, UITableView *tableView, NSIndexPath *indexPath)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, tableView, indexPath);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:[tableView cellForRowAtIndexPath:indexPath] andIndexPath:indexPath];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, tableView, indexPath);
 }
 
 @implementation UITableView (DSAdditions)

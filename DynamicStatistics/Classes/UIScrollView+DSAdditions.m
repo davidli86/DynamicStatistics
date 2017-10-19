@@ -14,38 +14,38 @@
 
 void swizzling_scrollViewDidScrollToTop(id self, SEL _cmd, UIScrollView *scrollView)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
 }
 
 void swizzling_scrollViewDidEndDecelerating(id self, SEL _cmd, UIScrollView *scrollView)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
 }
 
 void swizzling_scrollViewDidEndDragging_willDecelerate(id self, SEL _cmd, UIScrollView *scrollView, BOOL decelerate)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, BOOL))objc_msgSend)(self, swizzledSEL, scrollView, decelerate);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id, BOOL))objc_msgSend)(self, swizzledSEL, scrollView, decelerate);
 }
 
 void swizzling_scrollViewWillEndDragging_withVelocity_targetContentOffset(id self, SEL _cmd, UIScrollView *scrollView, CGPoint velocity, CGPoint *targetContentOffset)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, CGPoint, CGPoint *))objc_msgSend)(self, swizzledSEL, scrollView, velocity, targetContentOffset);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:scrollView andEventType:DSEventType_Scroll];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id, CGPoint, CGPoint *))objc_msgSend)(self, swizzledSEL, scrollView, velocity, targetContentOffset);
 }
 
 @implementation UIScrollView (DSAdditions)

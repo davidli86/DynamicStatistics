@@ -24,10 +24,10 @@
 + (instancetype)swizzling_actionWithTitle:(nullable NSString *)title style:(UIAlertActionStyle)style handler:(void (^ __nullable)(UIAlertAction *action))handler;
 {
     return [self swizzling_actionWithTitle:title style:style handler:^(UIAlertAction *action) {
-        handler(action);
-        
         DSViewEvent *event = [DSViewEvent eventWithNonView:action andIndex:0];
         [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+        
+        handler(action);
     }];
 }
 

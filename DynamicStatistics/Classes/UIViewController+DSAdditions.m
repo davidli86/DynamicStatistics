@@ -26,26 +26,26 @@
 
 -(void)swizzling_viewDidLoad
 {
-    [self swizzling_viewDidLoad];
-    
     DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageCreate];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    [self swizzling_viewDidLoad];
 }
 
 -(void)swizzling_viewDidAppear:(BOOL)animated
 {
-    [self swizzling_viewDidAppear:animated];
-    
     DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageAppear];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    [self swizzling_viewDidAppear:animated];
 }
 
 -(void)swizzling_viewDidDisappear:(BOOL)animated
 {
-    [self swizzling_viewDidDisappear:animated];
-    
     DSViewEvent *event = [DSViewEvent eventWithViewController:self andEventType:DSEventType_PageDisappear];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    [self swizzling_viewDidDisappear:animated];
 }
 
 -(void)swizzling_dealloc

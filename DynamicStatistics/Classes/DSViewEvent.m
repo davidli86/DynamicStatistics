@@ -81,12 +81,12 @@
         index = [view.superview.subviews indexOfObject:view];
     }
     
-    return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:DSEventType_Click];
+    return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld", (long)index] eventType:DSEventType_Click];
 }
 
 +(DSViewEvent *)eventWithView:(UIView *)view andIndex:(NSInteger)index
 {
-    NSString *indexStr = [NSString stringWithFormat:@"%ld", index];
+    NSString *indexStr = [NSString stringWithFormat:@"%ld", (long)index];
     if ([view isKindOfClass:[UIAlertView class]] || [view isKindOfClass:[UIActionSheet class]]) {
         return [self eventWithNonView:view andIndexStr:indexStr eventType:DSEventType_Click];
     }else{
@@ -96,17 +96,17 @@
 
 +(DSViewEvent *)eventWithView:(UIView *)view andIndexPath:(NSIndexPath *)indexPath
 {
-    return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld:%ld", indexPath.section, indexPath.row] eventType:DSEventType_Click];
+    return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld:%ld", (long)indexPath.section, (long)indexPath.row] eventType:DSEventType_Click];
 }
 
 +(DSViewEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index
 {
-    return [self eventWithNonView:nonView andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:DSEventType_Click];
+    return [self eventWithNonView:nonView andIndexStr:[NSString stringWithFormat:@"%ld", (long)index] eventType:DSEventType_Click];
 }
 
 +(DSViewEvent *)eventWithNonView:(id)nonView andIndex:(NSInteger)index eventType:(DSEventType)eventType
 {
-    return [self eventWithNonView:nonView andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:DSEventType_PagePopOut];
+    return [self eventWithNonView:nonView andIndexStr:[NSString stringWithFormat:@"%ld", (long)index] eventType:DSEventType_PagePopOut];
 }
 
 +(DSViewEvent *)eventWithView:(UIView *)view andEventType:(DSEventType)eventType
@@ -115,17 +115,21 @@
     if (view.superview) {
         index = [view.superview.subviews indexOfObject:view];
     }
-    return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld", index] eventType:eventType];
+    return [self eventWithView:view andIndexStr:[NSString stringWithFormat:@"%ld", (long)index] eventType:eventType];
 }
 
 +(DSViewEvent *)eventWithViewController:(UIViewController *)viewController andEventType:(DSEventType)eventType
 {
+    if (viewController == nil) {
+        return nil;
+    }
+    
     NSInteger index = 0;
     if (viewController.parentViewController) {
         index = [viewController.parentViewController.childViewControllers indexOfObject:viewController];
     }
     DSViewEvent *event = [[DSViewEvent alloc] init];
-    event.viewPath = [NSString stringWithFormat:@"%@&&%ld", [viewController class], index];
+    event.viewPath = [NSString stringWithFormat:@"%@&&%ld", [viewController class], (long)index];
     event.eventType = eventType;
     return event;
 }
@@ -134,16 +138,25 @@
 
 +(DSViewEvent *)eventWithNonView:(id)nonView andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
 {
+    if (nonView == nil) {
+        return nil;
+    }
+    
     NSMutableString *viewId = [NSMutableString stringWithString:NSStringFromClass([nonView class])];
     
     id title = nil;
     id tag = nil;
     @try {
-        title = [nonView valueForKey:@"title"];
-        if (title == nil) {
+        if ([nonView respondsToSelector:NSSelectorFromString(@"title")])
+        {
+            title = [nonView valueForKey:@"title"];
+        }
+        if (title == nil && [nonView respondsToSelector:NSSelectorFromString(@"titleLabel")]) {
             title = [nonView valueForKeyPath:@"titleLabel.text"];
         }
-        tag = [nonView valueForKey:@"tag"];
+        if ([nonView respondsToSelector:NSSelectorFromString(@"tag")]) {
+            tag = [nonView valueForKey:@"tag"];
+        }
     } @catch (NSException *exception) {
     }
     
@@ -208,6 +221,10 @@
 
 +(DSViewEvent *)eventWithView:(UIView *)view andIndexStr:(NSString *)indexStr eventType:(DSEventType)eventType
 {
+    if (view == nil) {
+        return nil;
+    }
+    
     NSMutableArray *viewClassPath = [NSMutableArray array];
     NSMutableArray *viewIndexPath = [NSMutableArray array];
     

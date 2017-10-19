@@ -14,11 +14,11 @@
 
 void swizzling_collectionView_didSelectItemAtIndexPath(id self, SEL _cmd, UICollectionView *collectionView, NSIndexPath *indexPath)
 {
-    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, collectionView, indexPath);
-    
     DSViewEvent *event = [DSViewEvent eventWithView:[collectionView cellForItemAtIndexPath:indexPath] andIndexPath:indexPath];
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
+    
+    SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
+    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, collectionView, indexPath);
 }
 
 @implementation UICollectionView (DSAdditions)
