@@ -55,10 +55,17 @@ void void_imp(){};
 {
     Class class = [self class];
     
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-
     SEL swizzledSelector = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(originalSelector)]);
 
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    //重复添加（父类／当前类）
+    //存在另外一种可能，就是子类先进行了添加，父类后添加，这种情况子类完全覆盖父类的实现，本程序不受影响。但是如果父类有添加特殊逻辑，则会被丢掉
+    if (swizzledMethod != NULL) {
+        return;
+    }
+    
     //以orignial方法名 + swizzled实现 添加 Method
     BOOL didAddMethod =
     class_addMethod(class,
@@ -87,7 +94,8 @@ void void_imp(){};
                         swizzledSelector,
                         swizzledImplementation,
                         types);
-        //为了避免重复交换，当且仅当 当前类无 swizzled方法时，才进行交换实现
+        
+        //正常情况下不会添加失败，因为前面已经排除重复添加的可能
         if (didAddMethod) {
             Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
             method_exchangeImplementations(originalMethod, swizzledMethod);
@@ -98,10 +106,14 @@ void void_imp(){};
 +(void)swizzleClassSelector:(SEL)originalSelector withIMP:(IMP)swizzledImplementation andTypeEncoding:(const char *)types
 {
     Class class = object_getClass((id)self);
-    
-    Method originalMethod = class_getClassMethod(class, originalSelector);
-    
     SEL swizzledSelector = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(originalSelector)]);
+
+    Method originalMethod = class_getClassMethod(class, originalSelector);
+    Method swizzledMethod = class_getClassMethod(class, swizzledSelector);
+    
+    if (swizzledMethod != NULL) {
+        return;
+    }
     
     BOOL didAddMethod =
     class_addMethod(class,
