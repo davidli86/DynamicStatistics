@@ -13,7 +13,9 @@
 static DynamicStatistics *_instance;
 
 @interface DynamicStatistics (){
-    NSDictionary    *_eventDict;
+    NSDictionary    *_exactEventDict;
+    NSDictionary    *_wildcardEventDict;
+
     DSEventLogBlock _eventLogBlock;
     BOOL            _logAllEvent;
     BOOL            _logAllPageEvent;
@@ -77,7 +79,8 @@ static DynamicStatistics *_instance;
         return;
     }
     
-    NSMutableDictionary *resultDict = [NSMutableDictionary dictionary];
+    NSMutableDictionary *exactDict = [NSMutableDictionary dictionary];
+    NSMutableDictionary *wildcardDict = [NSMutableDictionary dictionary];
     
     for (NSDictionary *dict in configArray) {
         if (![dict isKindOfClass:[NSDictionary class]]) {
@@ -93,16 +96,24 @@ static DynamicStatistics *_instance;
             continue;
         }
         
-        NSString *path = [[viewPath componentsSeparatedByString:@"&&"] firstObject];
-        
         DSViewEvent *event = [[DSViewEvent alloc] init];
         event.eventName = eventName;
         event.viewPath = viewPath;
         
-        [resultDict setObject:event forKey:path];
+        if (![viewPath containsString:@"*"]) {
+            [exactDict setObject:event forKey:viewPath];
+            continue;
+        }
+        
+        NSString *path = [[viewPath componentsSeparatedByString:@"&&"] firstObject];
+        if ([wildcardDict objectForKey:path] == nil) {
+            [wildcardDict setObject:path forKey:[NSMutableArray array]];
+        }
+        [((NSMutableArray *)[wildcardDict objectForKey:path]) addObject:event];
     }
     
-    _eventDict = resultDict;
+    _exactEventDict = exactDict;
+    _wildcardEventDict = wildcardDict;
     _eventLogBlock = block;
 }
 
@@ -135,63 +146,80 @@ static DynamicStatistics *_instance;
     NSString *viewId = [viewPathArray objectAtIndex:0];
     NSString *indexId = [viewPathArray objectAtIndex:1];
     
-    DSViewEvent *event = [_eventDict objectForKey:viewId];
+    DSViewEvent *exactEvent = [_exactEventDict objectForKey:originalEvent.viewPath];
+    NSArray *wildcardEvents = [_wildcardEventDict objectForKey:viewId];
     
-    if (_logAllEvent) {
-        originalEvent.eventName = event.eventName;
-        _eventLogBlock(originalEvent);
-        return;
+    BOOL found = NO;
+    
+    if (exactEvent) {//无通配符直接找到
+        
+        originalEvent.eventName = exactEvent.eventName;
+        found = YES;
+        
+    }else if (wildcardEvents){//找到有通配符的，再详细比较index
+        
+        DSViewEvent *eventIsEqual = nil;
+        
+        for (DSViewEvent *event in wildcardEvents) {
+            NSString *cmpIndexId = [[event.viewPath componentsSeparatedByString:@"&&"] objectAtIndex:1];
+            
+            NSArray *indexArray = [indexId componentsSeparatedByString:@"-"];
+            NSArray *cmpIndexArray = [cmpIndexId componentsSeparatedByString:@"-"];
+            
+            //path长度不相等
+            if (indexArray.count != cmpIndexArray.count) {
+                continue ;
+            }
+            
+            BOOL isEqual = YES;
+            for (int i = 0; i < indexArray.count && isEqual; i++) {
+                
+                //如果是indexpath，拆开再比较
+                NSArray *indexes = [[indexArray objectAtIndex:i] componentsSeparatedByString:@":"];
+                NSArray *cmpIndexes = [[cmpIndexArray objectAtIndex:i] componentsSeparatedByString:@":"];
+                
+                if (indexes.count != cmpIndexes.count) {
+                    isEqual = NO;
+                    break;
+                }
+                
+                for (int j = 0; j < indexes.count; j++) {
+                    NSString *index = [indexes objectAtIndex:j];
+                    NSString *cmpIndex = [cmpIndexes objectAtIndex:j];
+                    
+                    if (![cmpIndex isEqualToString:@"*"] && ![cmpIndex isEqualToString:index]) {
+                        isEqual = NO;
+                        break;
+                    }
+                }
+            }
+            if (isEqual) {
+                eventIsEqual = event;
+                break;
+            }
+        }
+        if (eventIsEqual) {
+            originalEvent.eventName = eventIsEqual.eventName;
+            found = YES;
+        }
+        
     }
     
-    if (_logAllPageEvent) {
+    if (found || _logAllEvent) {
+        
+        _eventLogBlock(originalEvent);
+        
+    }else if (_logAllPageEvent) {
         if (originalEvent.eventType == DSEventType_PageCreate ||
             originalEvent.eventType == DSEventType_PageAppear ||
             originalEvent.eventType == DSEventType_PageDisappear ||
             originalEvent.eventType == DSEventType_PageDestroy ||
             originalEvent.eventType == DSEventType_PagePopOut) {
-            originalEvent.eventName = event.eventName;
+            
             _eventLogBlock(originalEvent);
-            return;
-        }
-    }
-    
-    if (event == nil) {
-        return;
-    }
-    
-    NSString *cmpIndexId = [[event.viewPath componentsSeparatedByString:@"&&"] objectAtIndex:1];
-    
-    NSArray *indexArray = [indexId componentsSeparatedByString:@"-"];
-    NSArray *cmpIndexArray = [cmpIndexId componentsSeparatedByString:@"-"];
-    
-    if (indexArray.count != cmpIndexArray.count) {
-        return ;
-    }
-    
-    for (int i = 0; i < indexArray.count; i++) {
-        NSArray *indexes = [[indexArray objectAtIndex:i] componentsSeparatedByString:@":"];
-        NSArray *cmpIndexes = [[cmpIndexArray objectAtIndex:i] componentsSeparatedByString:@":"];
-        
-        if (indexes.count != cmpIndexes.count) {
-            return;
-        }
-        
-        for (int j = 0; j < indexes.count; j++) {
-            NSString *index = [indexes objectAtIndex:j];
-            NSString *cmpIndex = [cmpIndexes objectAtIndex:j];
             
-            if ([cmpIndex isEqualToString:@"*"]) {
-                continue;
-            }
-            
-            if ([cmpIndex isEqualToString:index]) {
-                continue;
-            }
         }
     }
-    
-    originalEvent.eventName = event.eventName;
-    _eventLogBlock(originalEvent);
 }
 
 @end
