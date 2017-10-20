@@ -49,7 +49,7 @@ static DynamicStatistics *_instance;
     NSString *plistPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:PlistFileName];
     if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath])
     {
-        [self setupWithPlist:plistPath andEventLogBlock:block];
+        [self setupWithPlistFilePath:plistPath andEventLogBlock:block];
     }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
