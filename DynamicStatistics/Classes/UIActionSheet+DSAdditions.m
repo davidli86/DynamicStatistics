@@ -18,7 +18,9 @@ void swizzling_actionSheet_clickedButtonAtIndex(id self, SEL _cmd, UIActionSheet
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, NSInteger))objc_msgSend)(self, swizzledSEL, actionSheet, buttonIndex);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, NSInteger))objc_msgSend)(self, swizzledSEL, actionSheet, buttonIndex);
+    }
 }
 
 @implementation UIActionSheet (DSAdditions)

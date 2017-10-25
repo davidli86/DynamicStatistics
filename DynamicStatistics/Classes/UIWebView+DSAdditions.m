@@ -18,7 +18,9 @@ void swizzling_webViewDidStartLoad(id self, SEL _cmd, UIWebView *webView)
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
+    }
 }
 
 void swizzling_webViewDidFinishLoad(id self, SEL _cmd, UIWebView *webView)
@@ -27,7 +29,9 @@ void swizzling_webViewDidFinishLoad(id self, SEL _cmd, UIWebView *webView)
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, webView);
+    }
 }
 
 void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webView, NSError *error)
@@ -36,7 +40,9 @@ void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webVie
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, webView, error);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, webView, error);
+    }
 }
 
 @implementation UIWebView (DSAdditions)

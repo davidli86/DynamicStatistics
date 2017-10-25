@@ -18,7 +18,9 @@ void swizzling_scrollViewDidScrollToTop(id self, SEL _cmd, UIScrollView *scrollV
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
+    }
 }
 
 void swizzling_scrollViewDidEndDecelerating(id self, SEL _cmd, UIScrollView *scrollView)
@@ -27,7 +29,9 @@ void swizzling_scrollViewDidEndDecelerating(id self, SEL _cmd, UIScrollView *scr
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, scrollView);
+    }
 }
 
 void swizzling_scrollViewDidEndDragging_willDecelerate(id self, SEL _cmd, UIScrollView *scrollView, BOOL decelerate)
@@ -36,7 +40,9 @@ void swizzling_scrollViewDidEndDragging_willDecelerate(id self, SEL _cmd, UIScro
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, BOOL))objc_msgSend)(self, swizzledSEL, scrollView, decelerate);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, BOOL))objc_msgSend)(self, swizzledSEL, scrollView, decelerate);
+    }
 }
 
 void swizzling_scrollViewWillEndDragging_withVelocity_targetContentOffset(id self, SEL _cmd, UIScrollView *scrollView, CGPoint velocity, CGPoint *targetContentOffset)
@@ -45,7 +51,9 @@ void swizzling_scrollViewWillEndDragging_withVelocity_targetContentOffset(id sel
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, CGPoint, CGPoint *))objc_msgSend)(self, swizzledSEL, scrollView, velocity, targetContentOffset);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, CGPoint, CGPoint *))objc_msgSend)(self, swizzledSEL, scrollView, velocity, targetContentOffset);
+    }
 }
 
 @implementation UIScrollView (DSAdditions)

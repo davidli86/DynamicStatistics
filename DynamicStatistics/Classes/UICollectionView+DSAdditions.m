@@ -18,7 +18,9 @@ void swizzling_collectionView_didSelectItemAtIndexPath(id self, SEL _cmd, UIColl
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, collectionView, indexPath);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, collectionView, indexPath);
+    }
 }
 
 @implementation UICollectionView (DSAdditions)

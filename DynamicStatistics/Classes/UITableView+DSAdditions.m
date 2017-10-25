@@ -18,7 +18,9 @@ void swizzling_tableView_didSelectRowAtIndexPath (id self, SEL _cmd, UITableView
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, tableView, indexPath);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, id))objc_msgSend)(self, swizzledSEL, tableView, indexPath);
+    }
 }
 
 @implementation UITableView (DSAdditions)

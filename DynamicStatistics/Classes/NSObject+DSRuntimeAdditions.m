@@ -9,8 +9,6 @@
 #import "NSObject+DSRuntimeAdditions.h"
 #import <objc/runtime.h>
 
-void void_imp(){};
-
 @implementation NSObject (DSRuntimeAdditions)
 
 + (void)swizzleInstanceSelector:(SEL)originalSelector with:(SEL)swizzledSelector;
@@ -61,7 +59,6 @@ void void_imp(){};
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
     
     //重复添加（父类／当前类）
-    //存在另外一种可能，就是子类先进行了添加，父类后添加，这种情况子类完全覆盖父类的实现，本程序不受影响。但是如果父类有添加特殊逻辑，则会被丢掉
     if (swizzledMethod != NULL) {
         return;
     }
@@ -82,9 +79,7 @@ void void_imp(){};
                             method_getImplementation(originalMethod),
                             method_getTypeEncoding(originalMethod));
         }else{
-            //如果父类也无original方法的实现，那么增加一个空实现，避免“unknown selector”的exception
-            //todo:对于有返回值的函数，这里有bug
-            class_addMethod(class, swizzledSelector, (IMP)void_imp, "v@:");
+            //如果父类也无original方法的实现，则不添加swizzledSelector，那么swizzledImplementation也不能调用swizzledSelector，否则会造成unknown selector的异常
         }
     }
     //如果添加失败，那么表示当前类已经有original方法的实现，接下来只需要交换实现即可
@@ -127,9 +122,6 @@ void void_imp(){};
                             swizzledSelector,
                             method_getImplementation(originalMethod),
                             method_getTypeEncoding(originalMethod));
-        }else{
-            //todo:对于有返回值的函数，这里有bug
-            class_addMethod(class, swizzledSelector, (IMP)void_imp, "v@:");
         }
     }else{
         didAddMethod =

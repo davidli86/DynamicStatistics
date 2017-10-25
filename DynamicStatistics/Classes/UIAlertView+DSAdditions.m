@@ -18,7 +18,9 @@ void swizzling_alertView_clickedButtonAtIndex(id self, SEL _cmd, UIAlertView *al
     [[DynamicStatistics sharedInstance] tryToLogEvent:event];
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id, NSInteger))objc_msgSend)(self, swizzledSEL, alertView, buttonIndex);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id, NSInteger))objc_msgSend)(self, swizzledSEL, alertView, buttonIndex);
+    }
 }
 
 @implementation UIAlertView (DSAdditions)

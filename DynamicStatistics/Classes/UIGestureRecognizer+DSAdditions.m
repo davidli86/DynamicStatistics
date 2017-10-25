@@ -36,7 +36,9 @@ void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
     }
     
     SEL swizzledSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@", SwizzlingMethodPrefix, NSStringFromSelector(_cmd)]);
-    ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, sender);
+    if ([self respondsToSelector:swizzledSEL]) {
+        ((void(*)(id, SEL, id))objc_msgSend)(self, swizzledSEL, sender);
+    }
 }
 
 @implementation UIGestureRecognizer (DSAdditions)
