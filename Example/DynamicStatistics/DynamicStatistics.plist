@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>viewPath</key>
+		<string>DSLogAllEvent</string>
+	</dict>
+	<dict>
+		<key>viewPath</key>
+		<string>DSLogAllPageEvent</string>
+	</dict>
+	<dict>
+		<key>viewPath</key>
 		<string>DSViewController-UIAlertAction_OK&amp;&amp;0-0</string>
 		<key>eventName</key>
 		<string>AlertVC-OK</string>

@@ -119,6 +119,16 @@ static NSMutableArray    *_swizzleClasses;
         NSString *eventName = [dict objectForKey:@"eventName"];
         NSString *viewPath = [dict objectForKey:@"viewPath"];
         
+        if ([viewPath isEqualToString:DSLogAllEvent]) {
+            [self setLogAllEvent:YES];
+            continue;
+        }
+        
+        if ([viewPath isEqualToString:DSLogAllPageEvent]) {
+            [self setLogAllPageEvent:YES];
+            continue;
+        }
+        
         if (eventName == nil || viewPath == nil) {
             NSLog(@"Plist data is not correct with: %@", dict);
             continue;

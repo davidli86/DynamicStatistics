@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DSViewEvent.h"
 
+#define DSLogAllEvent       @"DSLogAllEvent"
+#define DSLogAllPageEvent   @"DSLogAllPageEvent"
+
 typedef void(^DSEventLogBlock)(DSViewEvent *event);
 
 @interface DynamicStatistics : NSObject
@@ -17,8 +20,5 @@ typedef void(^DSEventLogBlock)(DSViewEvent *event);
 
 -(void)setupWithPlist:(NSString *)fileName andEventLogBlock:(DSEventLogBlock)block;
 -(void)setupWithUrlString:(NSString *)urlString andEventLogBlock:(DSEventLogBlock)block;
-
--(void)setLogAllEvent:(BOOL)logAllEvent;
--(void)setLogAllPageEvent:(BOOL)logAllPageEvent;
 
 @end
