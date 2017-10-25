@@ -10,7 +10,7 @@
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
 #import <objc/message.h>
-#import "DynamicStatistics.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 void swizzling_alertView_clickedButtonAtIndex(id self, SEL _cmd, UIAlertView *alertView, NSInteger buttonIndex)
 {
@@ -25,7 +25,11 @@ void swizzling_alertView_clickedButtonAtIndex(id self, SEL _cmd, UIAlertView *al
 
 @implementation UIAlertView (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

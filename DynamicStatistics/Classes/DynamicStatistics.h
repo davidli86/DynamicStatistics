@@ -21,6 +21,4 @@ typedef void(^DSEventLogBlock)(DSViewEvent *event);
 -(void)setLogAllEvent:(BOOL)logAllEvent;
 -(void)setLogAllPageEvent:(BOOL)logAllPageEvent;
 
--(void)tryToLogEvent:(DSViewEvent *)event;
-
 @end

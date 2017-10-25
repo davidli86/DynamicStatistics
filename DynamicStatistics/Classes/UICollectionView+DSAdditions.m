@@ -10,7 +10,7 @@
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
 #import <objc/message.h>
-#import "DynamicStatistics.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 void swizzling_collectionView_didSelectItemAtIndexPath(id self, SEL _cmd, UICollectionView *collectionView, NSIndexPath *indexPath)
 {
@@ -25,7 +25,11 @@ void swizzling_collectionView_didSelectItemAtIndexPath(id self, SEL _cmd, UIColl
 
 @implementation UICollectionView (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

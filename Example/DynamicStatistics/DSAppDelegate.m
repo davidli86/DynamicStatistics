@@ -16,7 +16,6 @@
     [[DynamicStatistics sharedInstance] setupWithPlist:@"DynamicStatistics" andEventLogBlock:^(DSViewEvent *event) {
         NSLog(@"\n--------------------------------------------------------------\nGet View Event\nEvent Name: %@\nEvent Type: %@\nView Path:%@\n--------------------------------------------------------------", event.eventName, event.eventTypeDescription, event.viewPath);
     }];
-    [[DynamicStatistics sharedInstance] setLogAllPageEvent:YES];
     return YES;
 }
 

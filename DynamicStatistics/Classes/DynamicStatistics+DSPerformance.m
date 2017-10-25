@@ -8,6 +8,7 @@
 
 #import "DynamicStatistics+DSPerformance.h"
 #import "NSObject+DSRuntimeAdditions.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 @implementation DynamicStatistics (DSPerformance)
 

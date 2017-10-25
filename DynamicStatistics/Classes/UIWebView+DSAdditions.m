@@ -10,7 +10,7 @@
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
 #import <objc/message.h>
-#import "DynamicStatistics.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 void swizzling_webViewDidStartLoad(id self, SEL _cmd, UIWebView *webView)
 {
@@ -47,7 +47,11 @@ void swizzling_webView_didFailLoadWithError(id self, SEL _cmd, UIWebView *webVie
 
 @implementation UIWebView (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

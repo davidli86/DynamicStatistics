@@ -10,7 +10,7 @@
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
 #import <objc/message.h>
-#import "DynamicStatistics.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
     if (sender.state == UIGestureRecognizerStateEnded) {
@@ -43,7 +43,11 @@ void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
 
 @implementation UIGestureRecognizer (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

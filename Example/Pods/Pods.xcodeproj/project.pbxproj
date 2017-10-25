@@ -29,6 +29,7 @@
 		777744C81F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 777744C61F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m */; };
 		777744CB1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h in Headers */ = {isa = PBXBuildFile; fileRef = 777744C91F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h */; };
 		777744CC1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = 777744CA1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m */; };
+		777745081FA05A1E0061D2A8 /* DynamicStatistics+DSPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 777745061FA05A1E0061D2A8 /* DynamicStatistics+DSPrivate.h */; };
 		824DCF2237C2020639DC18FF16C2BAF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		8AF8888854239B126567536C169AD720 /* UIAlertAction+DSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A30BDC2902FFCA6BE161E7DCA0806A /* UIAlertAction+DSAdditions.m */; };
 		8D33CB643CA7D4998CFF6D38396B3DE7 /* UINavigationController+DSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +96,7 @@
 		777744C61F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DSViewEvent+DSPerformance.m"; sourceTree = "<group>"; };
 		777744C91F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics+DSPerformance.h"; sourceTree = "<group>"; };
 		777744CA1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DynamicStatistics+DSPerformance.m"; sourceTree = "<group>"; };
+		777745061FA05A1E0061D2A8 /* DynamicStatistics+DSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DynamicStatistics+DSPrivate.h"; sourceTree = "<group>"; };
 		7B020D9B28157EE60D58CAE8EA08D750 /* Pods-DynamicStatistics_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Tests-resources.sh"; sourceTree = "<group>"; };
 		85F8DA67474C663463732BFFA0C86AC1 /* Pods-DynamicStatistics_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DynamicStatistics_Example-resources.sh"; sourceTree = "<group>"; };
 		881680DAEE49A6458E78C8DC2C00142D /* UINavigationController+DSAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DSAdditions.h"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				777744C61F987DDA0061D2A8 /* DSViewEvent+DSPerformance.m */,
 				C44E8E00E7C0DBF4E90F94E332A1A0C5 /* DynamicStatistics.h */,
 				FC8A9679673FC39C26A472300CC00522 /* DynamicStatistics.m */,
+				777745061FA05A1E0061D2A8 /* DynamicStatistics+DSPrivate.h */,
 				777744C91F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h */,
 				777744CA1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.m */,
 				BD6642D20481172B4858DE2B56A23263 /* NSObject+DSRuntimeAdditions.h */,
@@ -341,6 +344,7 @@
 				28BC2C4B63246EB90BF9592100CA8F0B /* UIGestureRecognizer+DSAdditions.h in Headers */,
 				8D33CB643CA7D4998CFF6D38396B3DE7 /* UINavigationController+DSAdditions.h in Headers */,
 				F36FDA3E4C0B59DE41D131DCB1EFFD94 /* UIScrollView+DSAdditions.h in Headers */,
+				777745081FA05A1E0061D2A8 /* DynamicStatistics+DSPrivate.h in Headers */,
 				D83DFBD9E479B42C15A4481DC2130EE2 /* UITableView+DSAdditions.h in Headers */,
 				5CA7E8B95F83E5363AEA9653B785DCCB /* UIView+DSAdditions.h in Headers */,
 				777744CB1F987DF90061D2A8 /* DynamicStatistics+DSPerformance.h in Headers */,

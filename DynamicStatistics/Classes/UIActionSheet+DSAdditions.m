@@ -9,8 +9,8 @@
 #import "UIActionSheet+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
-#import "DynamicStatistics.h"
 #import <objc/message.h>
+#import "DynamicStatistics+DSPrivate.h"
 
 void swizzling_actionSheet_clickedButtonAtIndex(id self, SEL _cmd, UIActionSheet *actionSheet, NSInteger buttonIndex)
 {
@@ -25,7 +25,11 @@ void swizzling_actionSheet_clickedButtonAtIndex(id self, SEL _cmd, UIActionSheet
 
 @implementation UIActionSheet (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

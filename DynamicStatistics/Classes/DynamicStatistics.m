@@ -11,6 +11,7 @@
 #define PlistFileName   @"DynamicStatistics"
 
 static DynamicStatistics *_instance;
+static NSMutableArray    *_swizzleClasses;
 
 @interface DynamicStatistics (){
     NSDictionary    *_exactEventDict;
@@ -33,6 +34,33 @@ static DynamicStatistics *_instance;
     return _instance;
 }
 
++(void)registerClass:(Class)aClass;
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _swizzleClasses = [NSMutableArray array];
+    });
+    if (aClass != NULL) {
+        [_swizzleClasses addObject:aClass];
+    }
+}
+
+-(void)tryToLoadAllSwizzle
+{
+    if (_exactEventDict.count > 0 || _wildcardEventDict > 0 || _logAllEvent || _logAllPageEvent) {
+        SEL loadSwizzle = NSSelectorFromString(@"loadSwizzle");
+        for (id aClass in _swizzleClasses) {
+            if ([aClass respondsToSelector:loadSwizzle]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [aClass performSelector:loadSwizzle];
+#pragma clang diagnostic pop
+
+            }
+        }
+    }
+}
+
 -(void)setupWithPlist:(NSString *)fileName andEventLogBlock:(DSEventLogBlock)block
 {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
@@ -41,6 +69,7 @@ static DynamicStatistics *_instance;
         return;
     }
     [self setupWithPlistFilePath:plistPath andEventLogBlock:block];
+    [self tryToLoadAllSwizzle];
 }
 
 -(void)setupWithUrlString:(NSString *)urlString andEventLogBlock:(DSEventLogBlock)block
@@ -66,6 +95,7 @@ static DynamicStatistics *_instance;
                 [self setupWithPlistFilePath:plistPath andEventLogBlock:block];
             }
         }
+        [self tryToLoadAllSwizzle];
     }];
     [task resume];
 }
@@ -120,11 +150,13 @@ static DynamicStatistics *_instance;
 -(void)setLogAllEvent:(BOOL)logAllEvent
 {
     _logAllEvent = logAllEvent;
+    [self tryToLoadAllSwizzle];
 }
 
 -(void)setLogAllPageEvent:(BOOL)logAllPageEvent
 {
     _logAllPageEvent = logAllPageEvent;
+    [self tryToLoadAllSwizzle];
 }
 
 -(void)tryToLogEvent:(DSViewEvent *)originalEvent

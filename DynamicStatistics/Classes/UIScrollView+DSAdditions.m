@@ -10,7 +10,7 @@
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
 #import <objc/message.h>
-#import "DynamicStatistics.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 void swizzling_scrollViewDidScrollToTop(id self, SEL _cmd, UIScrollView *scrollView)
 {
@@ -58,7 +58,11 @@ void swizzling_scrollViewWillEndDragging_withVelocity_targetContentOffset(id sel
 
 @implementation UIScrollView (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

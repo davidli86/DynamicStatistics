@@ -9,11 +9,15 @@
 #import "UIAlertAction+DSAdditions.h"
 #import "NSObject+DSRuntimeAdditions.h"
 #import "DSViewEvent.h"
-#import "DynamicStatistics.h"
+#import "DynamicStatistics+DSPrivate.h"
 
 @implementation UIAlertAction (DSAdditions)
 
-+(void)load
++(void)load{
+    [DynamicStatistics registerClass:self];
+}
+
++(void)loadSwizzle
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
