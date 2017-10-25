@@ -40,7 +40,7 @@ static NSMutableArray    *_swizzleClasses;
     dispatch_once(&onceToken, ^{
         _swizzleClasses = [NSMutableArray array];
     });
-    if (aClass != NULL) {
+    if (aClass != NULL && ![_swizzleClasses containsObject:aClass]) {
         [_swizzleClasses addObject:aClass];
     }
 }
