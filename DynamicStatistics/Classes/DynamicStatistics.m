@@ -47,7 +47,7 @@ static NSMutableArray    *_swizzleClasses;
 
 -(void)tryToLoadAllSwizzle
 {
-    if (_exactEventDict.count > 0 || _wildcardEventDict > 0 || _logAllEvent || _logAllPageEvent) {
+    if (_exactEventDict.count > 0 || _wildcardEventDict.count > 0 || _logAllEvent || _logAllPageEvent) {
         SEL loadSwizzle = NSSelectorFromString(@"loadSwizzle");
         for (id aClass in _swizzleClasses) {
             if ([aClass respondsToSelector:loadSwizzle]) {
