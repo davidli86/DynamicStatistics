@@ -33,28 +33,18 @@ Setup config file with local plist file or from network.
 //todo: log the event with your service or any other analytic platform, like Flurry.
 }];
 ```
-### From network:
+### From network(pure text, not a file):
 ```objc
 [[DynamicStatistics sharedInstance] setupWithUrlString:@"http://xxx.com/version=1.0" andEventLogBlock:^(DSViewEvent *event) {
 //todo: log the event with your service or any other analytic platform, like Flurry.
 }];
 ```
 
-### Log all events or page events
-
-There are two mothods helps you to log more events.
-
-```objc
-[[DynamicStatistics sharedInstance] setLogAllEvent:YES];
-```
-
-```objc
-[[DynamicStatistics sharedInstance] setLogAllPageEvent:YES];
-```
-
 ## Plist file format
-The local plist file format and text result from network should keep the same format. 
-`viewPath` is the key to identify the view. You can get it when testing from console. It is like a simplified XPath, but with index in the end. You can set index as `*` to represent any position. `eventName` is a readable name to describe the `viewPath`.
+The plist format should keep the same format with local and network. 
+`viewPath` is the key to identify the view. It is like a simplified XPath, but with index in the end. Set index to `*` to represent any position. 
+`eventName` is a readable name to describe the `viewPath`.
+Specially, set `viewPath` to `DSLogAllEvent` or `DSLogAllPageEvent` as a flag, to log all events or page events.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -62,6 +52,10 @@ The local plist file format and text result from network should keep the same fo
    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <array>
+        <dict>
+            <key>viewPath</key>
+            <string>DSLogAllEvent</string>
+        </dict>
         <dict>
             <key>viewPath</key>
             <string>DSViewController-UIAlertAction_OK&amp;&amp;0-0</string>

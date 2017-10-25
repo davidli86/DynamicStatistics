@@ -8,7 +8,9 @@
 
 #import "DynamicStatistics.h"
 
-#define PlistFileName   @"DynamicStatistics"
+#define PlistFileName       @"DynamicStatistics"
+#define DSLogAllEvent       @"DSLogAllEvent"
+#define DSLogAllPageEvent   @"DSLogAllPageEvent"
 
 static DynamicStatistics *_instance;
 static NSMutableArray    *_swizzleClasses;
