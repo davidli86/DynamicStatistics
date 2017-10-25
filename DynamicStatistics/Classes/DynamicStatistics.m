@@ -69,7 +69,6 @@ static NSMutableArray    *_swizzleClasses;
         return;
     }
     [self setupWithPlistFilePath:plistPath andEventLogBlock:block];
-    [self tryToLoadAllSwizzle];
 }
 
 -(void)setupWithUrlString:(NSString *)urlString andEventLogBlock:(DSEventLogBlock)block
@@ -95,7 +94,6 @@ static NSMutableArray    *_swizzleClasses;
                 [self setupWithPlistFilePath:plistPath andEventLogBlock:block];
             }
         }
-        [self tryToLoadAllSwizzle];
     }];
     [task resume];
 }
@@ -145,6 +143,7 @@ static NSMutableArray    *_swizzleClasses;
     _exactEventDict = exactDict;
     _wildcardEventDict = wildcardDict;
     _eventLogBlock = block;
+    [self tryToLoadAllSwizzle];
 }
 
 -(void)setLogAllEvent:(BOOL)logAllEvent
