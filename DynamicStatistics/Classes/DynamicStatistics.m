@@ -137,7 +137,7 @@ static NSMutableArray    *_swizzleClasses;
         
         NSString *path = [[viewPath componentsSeparatedByString:@"&&"] firstObject];
         if ([wildcardDict objectForKey:path] == nil) {
-            [wildcardDict setObject:path forKey:[NSMutableArray array]];
+            [wildcardDict setObject:[NSMutableArray array] forKey:path];
         }
         [((NSMutableArray *)[wildcardDict objectForKey:path]) addObject:event];
     }
