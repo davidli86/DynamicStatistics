@@ -58,14 +58,21 @@ void swizzling_targetAction(id self, SEL _cmd, UIGestureRecognizer *sender){
 
 -(instancetype)swizzling_initWithTarget:(id)target action:(SEL)action
 {
-    [[target class] swizzleInstanceSelector:action withIMP:(IMP)swizzling_targetAction andTypeEncoding:"v@:@"];
+    //Avoid crash when clicking Cancel in ActivityViewController
+    if (![NSStringFromSelector(action) isEqualToString:@"_dismiss"]) {
+        [[target class] swizzleInstanceSelector:action withIMP:(IMP)swizzling_targetAction andTypeEncoding:"v@:@"];
+    }
     return [self swizzling_initWithTarget:target action:action];
 }
 
 -(void)swizzling_addTarget:(id)target action:(SEL)action
 {
-    [[target class] swizzleInstanceSelector:action withIMP:(IMP)swizzling_targetAction andTypeEncoding:"v@:@"];
+    //Avoid crash when clicking Cancel in ActivityViewController
+    if (![NSStringFromSelector(action) isEqualToString:@"_dismiss"]) {
+        [[target class] swizzleInstanceSelector:action withIMP:(IMP)swizzling_targetAction andTypeEncoding:"v@:@"];
+    }
     [self swizzling_addTarget:target action:action];
 }
 
 @end
+
