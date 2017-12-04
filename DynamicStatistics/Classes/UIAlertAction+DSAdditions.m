@@ -30,8 +30,9 @@
     return [self swizzling_actionWithTitle:title style:style handler:^(UIAlertAction *action) {
         DSViewEvent *event = [DSViewEvent eventWithNonView:action andIndex:0];
         [[DynamicStatistics sharedInstance] tryToLogEvent:event];
-        
-        handler(action);
+        if (handler) {
+            handler(action);
+        }
     }];
 }
 

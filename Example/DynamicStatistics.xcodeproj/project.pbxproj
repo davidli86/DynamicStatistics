@@ -259,7 +259,7 @@
 				ORGANIZATIONNAME = "492334421@qq.com";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = S5VJ77ZCZR;
+						DevelopmentTeam = W755DZW6RK;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -537,7 +537,7 @@
 			baseConfigurationReference = 15D00E04EEF5E6A6A9C88D54 /* Pods-DynamicStatistics_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S5VJ77ZCZR;
+				DEVELOPMENT_TEAM = W755DZW6RK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicStatistics/DynamicStatistics-Prefix.pch";
 				INFOPLIST_FILE = "DynamicStatistics/DynamicStatistics-Info.plist";
@@ -553,7 +553,7 @@
 			baseConfigurationReference = 6195CBFD0EE2D9D9FED17D8D /* Pods-DynamicStatistics_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S5VJ77ZCZR;
+				DEVELOPMENT_TEAM = W755DZW6RK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DynamicStatistics/DynamicStatistics-Prefix.pch";
 				INFOPLIST_FILE = "DynamicStatistics/DynamicStatistics-Info.plist";
