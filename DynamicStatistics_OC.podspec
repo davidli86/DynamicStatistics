@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DynamicStatistics_OC'
-  s.version          = '0.4.2'
+  s.version          = '0.4.3'
   s.summary          = 'A library helps to collect user action data easily'
 
 # This description is used to generate tags and improve search results.
@@ -37,6 +37,6 @@ A library helps to collect user action data easily.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Security'
+  s.dependency 'SAMKeychain'
 end

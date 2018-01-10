@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/DynamicStatistics"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/DynamicStatistics_OC" "$PODS_CONFIGURATION_BUILD_DIR/SAMKeychain"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/DynamicStatistics/DynamicStatistics.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "DynamicStatistics"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/DynamicStatistics_OC/DynamicStatistics_OC.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SAMKeychain/SAMKeychain.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "DynamicStatistics_OC" -framework "SAMKeychain"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

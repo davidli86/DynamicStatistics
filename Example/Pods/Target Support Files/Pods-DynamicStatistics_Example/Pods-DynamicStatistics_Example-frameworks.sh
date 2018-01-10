@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/DynamicStatistics/DynamicStatistics.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DynamicStatistics_OC/DynamicStatistics_OC.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/DynamicStatistics/DynamicStatistics.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DynamicStatistics_OC/DynamicStatistics_OC.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
 fi

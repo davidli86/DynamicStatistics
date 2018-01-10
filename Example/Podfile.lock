@@ -1,16 +1,19 @@
 PODS:
-  - DynamicStatistics (0.1.0)
+  - DynamicStatistics_OC (0.4.2):
+    - SAMKeychain
+  - SAMKeychain (1.5.3)
 
 DEPENDENCIES:
-  - DynamicStatistics (from `../`)
+  - DynamicStatistics_OC (from `../`)
 
 EXTERNAL SOURCES:
-  DynamicStatistics:
+  DynamicStatistics_OC:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DynamicStatistics: 414a3c758783dfe9d3cf2070354af164c8eb97c4
+  DynamicStatistics_OC: 70ac26fcc801db3a777d0e956e758476314fdd29
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
 
-PODFILE CHECKSUM: b2b502522baf117e568beeaa7d13556f3b8326b8
+PODFILE CHECKSUM: 7293ef0680f26fa9b89a5a94b8c2fe217e5b7a58
 
 COCOAPODS: 1.1.1

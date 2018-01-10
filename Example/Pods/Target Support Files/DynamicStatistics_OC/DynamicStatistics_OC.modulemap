@@ -1,0 +1,6 @@
+framework module DynamicStatistics_OC {
+  umbrella header "DynamicStatistics_OC-umbrella.h"
+
+  export *
+  module * { export * }
+}
