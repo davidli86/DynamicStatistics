@@ -1,6 +1,6 @@
 {
   "name": "DynamicStatistics_OC",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "summary": "A library helps to collect user action data easily",
   "description": "A library helps to collect user action data easily.",
   "homepage": "https://gitlab.dev.activenetwork.com/dli/DynamicStatistics",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://gitlab.dev.activenetwork.com/dli/DynamicStatistics.git",
-    "tag": "0.4.2"
+    "tag": "0.4.3"
   },
   "platforms": {
     "ios": "8.0"
