@@ -7,6 +7,7 @@
 //
 
 #import "DynamicStatistics.h"
+#import "DSUserIdentifier.h"
 
 #define PlistFileName       @"DynamicStatistics"
 #define DSLogAllEvent       @"DSLogAllEvent"
@@ -34,6 +35,11 @@ static NSMutableArray    *_swizzleClasses;
         _instance = [[DynamicStatistics alloc] init];
     });
     return _instance;
+}
+
++(NSString *)userIdentifier
+{
+    return [DSUserIdentifier userUUID];
 }
 
 +(void)registerClass:(Class)aClass;

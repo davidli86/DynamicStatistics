@@ -15,6 +15,8 @@ typedef void(^DSEventLogBlock)(DSViewEvent *event);
 
 +(instancetype)sharedInstance;
 
++(NSString *)userIdentifier;
+
 -(void)setupWithPlist:(NSString *)fileName andEventLogBlock:(DSEventLogBlock)block;
 -(void)setupWithUrlString:(NSString *)urlString andEventLogBlock:(DSEventLogBlock)block;
 
