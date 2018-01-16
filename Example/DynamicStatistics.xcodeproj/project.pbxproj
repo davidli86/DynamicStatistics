@@ -20,10 +20,12 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7777429F1F8F42440061D2A8 /* DSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7777429E1F8F42430061D2A8 /* DSWebViewController.m */; };
 		7777445F1F94A6D40061D2A8 /* DynamicStatistics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7777445E1F94A6D30061D2A8 /* DynamicStatistics.plist */; };
+		77DA7767200CA0E000D3C01B /* DynamicStatisticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA7766200CA0E000D3C01B /* DynamicStatisticsTests.m */; };
+		77DA776D200D9BD100D3C01B /* NSObject+DSRuntimeAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA776C200D9BD100D3C01B /* NSObject+DSRuntimeAdditionsTests.m */; };
+		77DA7770200DA16D00D3C01B /* NSObject+DSForUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DA776F200DA16D00D3C01B /* NSObject+DSForUnitTest.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F308DCF8118708533D1FB167 /* Pods_DynamicStatistics_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F171B7C347A521A6B511C5EC /* Pods_DynamicStatistics_Example.framework */; };
 /* End PBXBuildFile section */
@@ -59,13 +61,16 @@
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6195CBFD0EE2D9D9FED17D8D /* Pods-DynamicStatistics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Example/Pods-DynamicStatistics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7777429D1F8F42430061D2A8 /* DSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSWebViewController.h; sourceTree = "<group>"; };
 		7777429E1F8F42430061D2A8 /* DSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSWebViewController.m; sourceTree = "<group>"; };
 		7777445E1F94A6D30061D2A8 /* DynamicStatistics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DynamicStatistics.plist; sourceTree = "<group>"; };
+		77DA7766200CA0E000D3C01B /* DynamicStatisticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicStatisticsTests.m; sourceTree = "<group>"; };
+		77DA776C200D9BD100D3C01B /* NSObject+DSRuntimeAdditionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DSRuntimeAdditionsTests.m"; sourceTree = "<group>"; };
+		77DA776E200DA16D00D3C01B /* NSObject+DSForUnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DSForUnitTest.h"; sourceTree = "<group>"; };
+		77DA776F200DA16D00D3C01B /* NSObject+DSForUnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DSForUnitTest.m"; sourceTree = "<group>"; };
 		799435BD0DBC3178A22BD65F /* Pods_DynamicStatistics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicStatistics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA67389FF2E1A583EDA3F0C /* Pods-DynamicStatistics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicStatistics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicStatistics_Tests/Pods-DynamicStatistics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,7 +172,10 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
+				77DA7766200CA0E000D3C01B /* DynamicStatisticsTests.m */,
+				77DA776C200D9BD100D3C01B /* NSObject+DSRuntimeAdditionsTests.m */,
+				77DA776E200DA16D00D3C01B /* NSObject+DSForUnitTest.h */,
+				77DA776F200DA16D00D3C01B /* NSObject+DSForUnitTest.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -406,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DA7770200DA16D00D3C01B /* NSObject+DSForUnitTest.m in Sources */,
 				7777429F1F8F42440061D2A8 /* DSWebViewController.m in Sources */,
 				6003F59E195388D20070C39A /* DSAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* DSViewController.m in Sources */,
@@ -417,7 +426,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				77DA7767200CA0E000D3C01B /* DynamicStatisticsTests.m in Sources */,
+				77DA776D200D9BD100D3C01B /* NSObject+DSRuntimeAdditionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
