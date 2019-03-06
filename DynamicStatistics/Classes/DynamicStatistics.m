@@ -92,6 +92,7 @@ static NSMutableArray    *_swizzleClasses;
     [configuration setTLSMinimumSupportedProtocol:kTLSProtocol12];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+    [request setHTTPMethod:@"POST"];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Network error occur when reading plist from %@.\n%@", urlString, error);
