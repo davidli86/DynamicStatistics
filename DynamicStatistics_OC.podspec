@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DynamicStatistics_OC'
-  s.version          = '0.4.3'
+  s.version          = '0.4.4'
   s.summary          = 'A library helps to collect user action data easily'
 
 # This description is used to generate tags and improve search results.
