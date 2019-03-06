@@ -16,7 +16,7 @@
 static DynamicStatistics *_instance;
 static NSMutableArray    *_swizzleClasses;
 
-@interface DynamicStatistics (){
+@interface DynamicStatistics ()<NSURLSessionDelegate>{
     NSDictionary    *_exactEventDict;
     NSDictionary    *_wildcardEventDict;
 
@@ -88,8 +88,11 @@ static NSMutableArray    *_swizzleClasses;
         [self setupWithPlistFilePath:plistPath andEventLogBlock:block];
     }
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    [configuration setTLSMinimumSupportedProtocol:kTLSProtocol12];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Network error occur when reading plist from %@.\n%@", urlString, error);
         }else{
@@ -270,6 +273,36 @@ static NSMutableArray    *_swizzleClasses;
             _eventLogBlock(originalEvent);
             
         }
+    }
+}
+
+#pragma mark - NSURLSessionDelegate
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
+    __block NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+    __block NSURLCredential *credential = nil;
+    
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        SecTrustRef serverTrust = challenge.protectionSpace.serverTrust;
+        
+        NSString *host = task.currentRequest.URL.host;
+        SecPolicyRef sslPolicy = SecPolicyCreateSSL(YES, (__bridge CFStringRef)(host));
+        SecTrustSetPolicies(serverTrust, sslPolicy);
+        CFRelease(sslPolicy);
+        
+        SecTrustEvaluateAsync(serverTrust, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(SecTrustRef  _Nonnull trustRef, SecTrustResultType trustResult) {
+            OSStatus status = SecTrustEvaluate(serverTrust, &trustResult);
+            if (status == errSecSuccess && (trustResult == kSecTrustResultProceed || trustResult == kSecTrustResultUnspecified)) {
+                credential = [NSURLCredential credentialForTrust:serverTrust];
+                disposition = NSURLSessionAuthChallengeUseCredential;
+            } else {
+                disposition = NSURLSessionAuthChallengeCancelAuthenticationChallenge;
+            }
+            completionHandler(disposition, credential);
+        });
+    } else {
+        disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+        completionHandler(disposition, credential);
     }
 }
 
