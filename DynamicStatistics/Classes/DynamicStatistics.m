@@ -306,4 +306,8 @@ static NSMutableArray    *_swizzleClasses;
     }
 }
 
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask willCacheResponse:(NSCachedURLResponse *)proposedResponse completionHandler:(void (^)(NSCachedURLResponse * __nullable ))completionHandler {
+    completionHandler(nil);
+}
+
 @end
