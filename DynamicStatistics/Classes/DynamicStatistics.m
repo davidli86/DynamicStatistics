@@ -95,6 +95,8 @@ static NSMutableArray    *_swizzleClasses;
         }else{
             NSError *aError;
             NSString *plistStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSDictionary *protection = [NSDictionary dictionaryWithObject:NSFileProtectionComplete forKey:NSFileProtectionKey];
+            [[NSFileManager defaultManager] setAttributes:protection ofItemAtPath:plistPath error:nil];
             [plistStr writeToFile:plistPath atomically:YES encoding:NSUTF8StringEncoding error:&aError];
             if (aError) {
                 NSLog(@"Error occur when writing plist to file.\n%@", aError);
