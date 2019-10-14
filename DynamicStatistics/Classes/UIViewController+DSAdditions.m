@@ -23,7 +23,7 @@
     dispatch_once(&onceToken, ^{
 //        [self swizzleInstanceSelector:@selector(viewDidLoad) with:@selector(swizzling_viewDidLoad)];
         [self swizzleInstanceSelector:@selector(viewDidAppear:) with:@selector(swizzling_viewDidAppear:)];
-        [self swizzleInstanceSelector:@selector(viewDidDisappear:) with:@selector(swizzling_viewDidDisappear:)];
+//        [self swizzleInstanceSelector:@selector(viewDidDisappear:) with:@selector(swizzling_viewDidDisappear:)];
 //        [self swizzleInstanceSelector:NSSelectorFromString(@"dealloc") with:@selector(swizzling_dealloc)];
     });
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DynamicStatistics_OC'
-  s.version          = '0.4.5'
+  s.version          = '0.4.6'
   s.summary          = 'A library helps to collect user action data easily'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 A library helps to collect user action data easily.
                        DESC
 
-  s.homepage         = 'https://gitlab.dev.activenetwork.com/dli/DynamicStatistics'
+  s.homepage         = 'https://gitlab.dev.activenetwork.com/activeMobile/lib/DynamicStatistics'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'David Li' => 'David.Li@activenetwork.com' }
-  s.source           = { :git => 'https://gitlab.dev.activenetwork.com/dli/DynamicStatistics.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@gitlab.dev.activenetwork.com:activeMobile/lib/DynamicStatistics.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
