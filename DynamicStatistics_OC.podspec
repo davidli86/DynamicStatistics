@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 A library helps to collect user action data easily.
                        DESC
 
-  s.homepage         = 'https://gitlab.dev.activenetwork.com/activeMobile/lib/DynamicStatistics'
+  s.homepage         = 'https://github.com/davidli86/DynamicStatistics'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'David' => '492334421@qq.com' }
-  s.source           = { :git => 'git@gitlab.dev.activenetwork.com:activeMobile/lib/DynamicStatistics.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:davidli86/DynamicStatistics.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
