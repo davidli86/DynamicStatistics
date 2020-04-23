@@ -92,7 +92,7 @@ Specially, set `viewPath` to `DSLogAllEvent` or `DSLogAllPageEvent` as a flag, t
 
 ## Author
 
-David.Li, David.Li@activenetwork.com
+David, 492334421@qq.com
 
 ## License
 
